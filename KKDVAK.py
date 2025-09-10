@@ -1,5 +1,5 @@
-var1=int(input("introduce un número entero"))
-var2=int(input("introduce otro número entero"))
+var1=float(input("introduce un número racional: "))
+var2=float(input("introduce otro número racional: "))
 var3="hola"
 var4="En un lugar de la Mancha, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor."
 
