@@ -1,5 +1,4 @@
-#Introduce por teclado dos números y muestre por pantalla la siguiente información: 
-#cociente, resto y si el dividendo es par o impar.
+#Introduce por teclado dos números y muestre por pantalla la siguiente información: cociente, resto y si el dividendo es par o impar.
 patata1=float(input("Introduce un valor: "))
 patata2=float(input("Introduce otro valor: "))
 

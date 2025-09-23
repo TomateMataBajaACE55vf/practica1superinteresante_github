@@ -4,7 +4,7 @@ lado=float(input("Introduce un valor: "))
 bmenor=float(input("Introduce otro valor: "))
 bmayor=float(input("Introduce otro valor: "))
 altura=float(input("Introduce otro valor: "))
-
+#Fórmulas para calcular los valores pedidos.
 per=lado*2+bmenor+bmayor
 area=(bmayor+bmenor)*altura/2
 
