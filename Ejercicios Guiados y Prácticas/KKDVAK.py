@@ -24,3 +24,4 @@ if var5.isdecimal():
     print("KK")
 else:
     print("VAK")
+txt = "Hello Sam!"
