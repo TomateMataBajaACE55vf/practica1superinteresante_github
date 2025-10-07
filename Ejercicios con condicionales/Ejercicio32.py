@@ -1,8 +1,9 @@
 #Cómo solucionarías con ayuda de métodos String el problema del ejercicio anterior para no distinguir entre mayúsculas y minúsculas.
 word=str(input("Introduce una palabra: "))
 ora="A quién madruga Dios ayuda"
-mayus=word.capitalize()
-minus=word.casefold()
+ora=ora.lower()
+mayus=word.upper()
+minus=word.lower()
 
 if mayus in ora:
     ind=ora.index(mayus)

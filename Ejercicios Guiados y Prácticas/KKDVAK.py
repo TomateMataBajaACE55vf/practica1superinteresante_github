@@ -19,6 +19,6 @@ var4="En un lugar de la Mancha, no ha mucho tiempo que vivía un hidalgo de los 
 #print(tarde1," ha llegado tarde el día de hoy")
 
 print(var4)
-var5=9.8
+var5=str(9.8)
 x=var5.isdecimal()
 print(x)
