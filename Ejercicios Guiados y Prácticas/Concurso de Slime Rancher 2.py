@@ -11,6 +11,7 @@ if "néctar rocío de luna" in res1:
     point=point+1
 else:
     print("Esa no era la respuesta correcta, su comida favorita es el Néctar Rocío de Luna.")
+time.sleep(3)
 res2=str(input("De qué slime es favorito la Polariguinda?: "))
 res2=res2.lower()
 if "gemelo" in res2:
@@ -18,6 +19,7 @@ if "gemelo" in res2:
     point=point+1
 else:
     print("Esa no era la respuesta correcta, el slime cuyo favorito es la Polariguinda es el Slime Gemelo.")
+time.sleep(3)
 res3=str(input("De qué slime es favorito el juguete del Bote de Basura?: "))
 res3=res3.lower()
 if "colianillado" in res3:
@@ -25,4 +27,22 @@ if "colianillado" in res3:
     point=point+1
 else:
     print("Esa no era la respuesta correcta, el slime cuyo juguete favorito es el Bote de Basura es el Slime Colianillado.")
+print("Has obtenido ",point,"puntos en total.")
+time.sleep(3)
+res4=str(input("Cuál es el slime que aparece en un evento de tornado?: "))
+res4=res4.lower()
+if "derviche" in res4:
+    print("¡Correcto!")
+    point=point+1
+else:
+    print("Esa no era la respuesta correcta, el slime que aparece en un tornado es el Slime Derviche.")
+time.sleep(3)
+res5=str(input("Cuál es el slime más raro del juego?: "))
+res5=res5.lower()
+if "yema" in res5:
+    print("¡Correcto!")
+    point=point+1
+else:
+    print("Esa no era la respuesta correcta, el slime más raro del juego es el Slime Yema.")
+time.sleep(3)
 print("Has obtenido ",point,"puntos en total.")
