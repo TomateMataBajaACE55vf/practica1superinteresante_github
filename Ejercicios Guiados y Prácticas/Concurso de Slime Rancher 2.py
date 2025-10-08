@@ -27,7 +27,6 @@ if "colianillado" in res3:
     point=point+1
 else:
     print("Esa no era la respuesta correcta, el slime cuyo juguete favorito es el Bote de Basura es el Slime Colianillado.")
-print("Has obtenido ",point,"puntos en total.")
 time.sleep(3)
 res4=str(input("¿Cuál es el slime que aparece en un evento de tornado?: "))
 res4=res4.lower()
@@ -47,7 +46,6 @@ else:
 time.sleep(3)
 res6=str(input("¿Cuál es el gordo que tapa la entrada al portal del laberinto que te lleva a Lava Dephts?: "))
 res6=res6.lower()
-point=0
 if "búm" in res6:
     print("¡Correcto!")
     point=point+1
@@ -69,7 +67,6 @@ if "gigi" in res8:
     point=point+1
 else:
     print("Esa no era la respuesta correcta, la persona es Gigi Twillgers.")
-print("Has obtenido ",point,"puntos en total.")
 time.sleep(3)
 res9=str(input("¿Cuál es el plort que más carga a los drones?: "))
 res9=res9.lower()
@@ -80,7 +77,7 @@ else:
     print("Esa no era la respuesta correcta, el plort era el plort Dorado.")
 time.sleep(3)
 res10=str(input("¿Cuál es el gordo que es el único en su zona?: "))
-res10=res5.lower()
+res10=res10.lower()
 if "sable" in res10:
     print("¡Correcto!")
     point=point+1
