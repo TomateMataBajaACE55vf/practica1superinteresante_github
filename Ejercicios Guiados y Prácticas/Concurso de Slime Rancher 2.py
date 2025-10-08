@@ -49,6 +49,9 @@ res6=res6.lower()
 if "búm" in res6:
     print("¡Correcto!")
     point=point+1
+elif "bum" in res6:
+    print("Está súper híper mega mal escrito pero bueno, por alguna extraña razón el juego lo categoriza como Búm.")
+    point=point+1
 else:
     print("Esa no era la respuesta correcta, el gordo es el gordo Búm.")
 time.sleep(3)
@@ -85,3 +88,4 @@ else:
     print("Esa no era la respuesta correcta, el único gordo de Acantilados Polvorosos es el gordo Sable.")
 time.sleep(3)
 print("Has obtenido ",point,"puntos en total.")
+time.sleep
