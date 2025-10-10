@@ -95,4 +95,3 @@ else:
 time.sleep(3)
 print("Has obtenido ",point,"puntos en total.")
 time.sleep(5)
-vaj=str(input("¿Deseas volver a intentarlo?"))
