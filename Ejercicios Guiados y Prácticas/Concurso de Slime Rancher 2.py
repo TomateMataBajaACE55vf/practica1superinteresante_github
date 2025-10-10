@@ -1,6 +1,8 @@
 import time
 print("¡Bienvenido al concurso de preguntas sobre Slime Rancher 2!")
 time.sleep(3)
+if "si" or "sí" in vaj:
+
 print("Empecemos con preguntas generales sobre las preferencias de nuestros amigos viscosos:")
 time.sleep(3)
 res1=str(input("¿Cuál es la comida favorita del Slime Aleteo?: "))
@@ -27,6 +29,8 @@ if "colianillado" in res3:
     point=point+1
 else:
     print("Esa no era la respuesta correcta, el slime cuyo juguete favorito es el Bote de Basura es el Slime Colianillado.")
+time.sleep(3)
+print("¡Ahora sigamos con Spawn Rates!")
 time.sleep(3)
 res4=str(input("¿Cuál es el slime que aparece en un evento de tornado?: "))
 res4=res4.lower()
@@ -55,6 +59,7 @@ elif "bum" in res6:
 else:
     print("Esa no era la respuesta correcta, el gordo es el gordo Búm.")
 time.sleep(3)
+print("¡Sigamos con un poco de personajes principales!")
 res7=str(input("¿Qué personaje del intercambio de pradera te da los portales?: "))
 res7=res7.lower()
 if "víktor" in res7:
@@ -71,6 +76,7 @@ if "gigi" in res8:
 else:
     print("Esa no era la respuesta correcta, la persona es Gigi Twillgers.")
 time.sleep(3)
+print("¡Terminamos con curiosidades!")
 res9=str(input("¿Cuál es el plort que más carga a los drones?: "))
 res9=res9.lower()
 if "dorado" in res9:
@@ -88,4 +94,5 @@ else:
     print("Esa no era la respuesta correcta, el único gordo de Acantilados Polvorosos es el gordo Sable.")
 time.sleep(3)
 print("Has obtenido ",point,"puntos en total.")
-time.sleep
+time.sleep(5)
+vaj=str(input("¿Deseas volver a intentarlo?"))
