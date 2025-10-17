@@ -7,9 +7,9 @@
 #print(tarde1," ha llegado tarde el día de hoy")
 
 #print(var4)
-var5=str(input("Introduce un número: "))
-if var5.isdecimal():
-    print("KK")
+var=str(input("Introduce una palabra: "))
+var=var.lower()
+if var[0] == ("a" or "e" or "i" or "o" or "u"):
+    print("Tu palabra empieza con una vocal.")
 else:
-    print("VAK")
-txt = "Hello Sam!"
+    print("Tu palabra no empieza con una vocal.")
