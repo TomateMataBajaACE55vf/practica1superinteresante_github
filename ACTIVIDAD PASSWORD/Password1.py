@@ -12,29 +12,40 @@ print("      Posición 7 Uno de los siguientes símbolos &, /, #")
 print("      Posición 8 Un número mayor o igual que 5")
 #se pide el password al usuario
 password=str(input("Introduce el password: "))
-error=0
+error=str(0)
 #se cuenta la longitud del password
 passwlen=len(password)
 if 6 <= passwlen <= 8:
     pass1=password[0]
+    pass2=password[1]
+    pass3=password[2]
+    pass4=password[3]
+    pass5=password[4]
+    pass6=password[5]
+
     if pass1.isnumeric():
-        pass1=float(password[0])
-        if 1 <= pass1 <=5:
-            print("KK")
-        elif 1 >= password[0] >=5:
-            error="Error en el carácter 1""
-        elif password[1].islower():
-            print("DVAK")
+        pass1=float(pass1)
+        if 1 >= pass1 >=5:
+            error=str(0)
         else:
-            error=error+"Error en el carácter 2 "
-            print=error
+            error="Error en el carácter 1 "
     else:
         error="Error en el carácter 1 "
-        if password[1].islower():
-            print("DVAK")
-            print(error)
+
+    if pass2.isalpha():
+        pass2=str(pass2)
+        if pass2.islower():
+            if error == 0:
+                print("Maravilloso")
+            else:
+                print(error)
         else:
             error=error+"Error en el carácter 2 "
-            print=error
+            print(error)
+
+    else:
+        error=error+"Error en el carácter 2 "
+        print(error)
+
 else:
     print(f"Error, el password tiene una longitud de {passwlen} caracteres y no cumple los requisitos")
