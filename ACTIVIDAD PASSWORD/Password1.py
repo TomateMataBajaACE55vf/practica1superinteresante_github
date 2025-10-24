@@ -9,7 +9,7 @@ print("      Posición 4 Uno de los siguientes símbolos *, _, @")
 print("      Posición 5 Una letra minúscula")
 print("      Posición 6 Un número mayor o igual que 6 y menor o igual que 9")
 print("      Posición 7 Uno de los siguientes símbolos &, /, #")
-print("      Posición 8 Un número mayor o igual que 5")
+print("      Posición 8 Un número menor o igual que 5")
 #se pide el password al usuario
 password=str(input("Introduce el password: "))
 #número de errores es igual a 0 porque no hay 
@@ -53,7 +53,7 @@ if 6 <= passwlen <= 8:
     #se  hace lo mismo con la posición 3
     if pass3.isalpha():
         pass3=str(pass3)
-        if pass3.islower():
+        if pass3.isupper():
             error=error
         else:
             error=error+"Error en el carácter 3 "
@@ -78,7 +78,7 @@ if 6 <= passwlen <= 8:
     #se hace lo mismo que la posición 1 pero con valores diferentes
     if pass6.isnumeric():
         pass6=float(pass6)
-        if 6 >= pass6 >=9:
+        if 6 <= pass6 <=9:
             error=error
         else:
             error=error+"Error en el carácter 6 "
@@ -114,7 +114,7 @@ if 6 <= passwlen <= 8:
         #se observa si la posición 8 es un número y si es mayor o igual que 5
         if pass8.isnumeric():
             pass8=float(pass8)
-            if pass8 >= 5:
+            if pass8 <= 5:
                 error=error
             else:
                 error=error+"Error en el carácter 8"
