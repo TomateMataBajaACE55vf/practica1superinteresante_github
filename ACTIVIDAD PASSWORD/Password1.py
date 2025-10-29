@@ -75,6 +75,9 @@ if 6 <= passwlen <= 8:
         else:
             error=error+"Error en el carácter 5 "
             nume=nume+1
+    else:
+        error=error+"Error en el carácter 5 "
+        nume=nume+1
     #se hace lo mismo que la posición 1 pero con valores diferentes
     if pass6.isnumeric():
         pass6=float(pass6)
