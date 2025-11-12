@@ -1,10 +1,14 @@
 #Imprima el siguiente patrón con el ciclo for. 
-patron="*"
-pos=int(5)
-for x in range(4):
-    print(patron)
-    patron=patron+"*"
-for y in range(4):
-    patron=patron.replace(str(pos),"")
-    pos=pos-1
-    print(patron)
+for repe in range(5):
+    #hacemos que se repita 5 veces
+    for pos in range(repe):
+        #esta línea hace que se repita repe veces
+        print("*",end="")
+        #mientras más se repita repe será más grande por lo cual la cantidad de asteriscos será mayor
+    print()
+    #imprimimos aire para saltar a la siguiente línea y que no se quede en la misma
+for repe in range(5,0,-1):
+    #hacemos lo mismo al revés
+    for pos in range(repe):
+        print("*",end="")
+    print()

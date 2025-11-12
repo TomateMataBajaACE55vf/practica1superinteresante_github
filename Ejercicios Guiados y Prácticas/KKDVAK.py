@@ -7,9 +7,9 @@
 #print(tarde1," ha llegado tarde el día de hoy")
 
 #print(var4)
-var=str(input("Introduce una palabra: "))
-var=var.lower()
-if var[0] == ("a" or "e" or "i" or "o" or "u"):
-    print("Tu palabra empieza con una vocal.")
-else:
-    print("Tu palabra no empieza con una vocal.")
+#var=str(input("Introduce una palabra: "))
+#var=var.lower()
+#if var[0] == ("a" or "e" or "i" or "o" or "u"):
+#    print("Tu palabra empieza con una vocal.")
+#else:
+#    print("Tu palabra no empieza con una vocal.")
