@@ -3,7 +3,7 @@ word=str(input("Introduce una palabra: "))
 voc=""
 con=""
 for pos in range(len(word)):
-    if word[pos] in "aeiouáéíóú":
+    if word[pos] in "aeiouáéíóúàèìòùïü":
         voc=voc+word[pos]
     else:
         con=con+word[pos]

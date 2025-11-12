@@ -5,7 +5,7 @@ con=""
 word=word.lower()
 #convertimos la palabra en minúscula para que no se confunda el código
 for pos in range(len(word)):
-    if word[pos] in "aeiouáéíóú":
+    if word[pos] in "aeiouáéíóúàèìòùïü":
         voc=voc+word[pos]
     else:
         con=con+word[pos]
