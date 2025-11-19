@@ -7,7 +7,7 @@ suma=op1+op2
 print("El resultado de la suma es: ", suma)
 
 sino=str(input("Deseas repetir la operación s/n: "))
-
+#mientras la respuesta sea s el programa se repetirá
 while sino=="s":
     op1=int(input("Introduce un número entero: "))
     op2=int(input("Introduce otro número entero: "))
