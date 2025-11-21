@@ -15,10 +15,12 @@ print("Ejemplo de 2 pedidos")
 precio=float(0)
 sino="s"
 repe=int(0)
+#mientras s sea la respuesta, se repetirá
 while sino.lower()=="s":
     menu=int(input("Introduce un menu: "))
     comp=int(input("Introduce un acompañamiento: "))
     bebe=int(input("Introduce una bebida: "))
+    #según el número introducido se suma el precio del producto correspondiente
     if menu == 1:
         precio=precio+9
     elif menu == 2:
@@ -45,6 +47,7 @@ while sino.lower()=="s":
         print("El valor introducido no es válido, no se ha seleccionado ninguna bebida.")
     repe=repe+1
     sino=str(input("Deseas repetir la operación s/n: "))
+#se observa si el precio original cumple con las condiciones de descuento
 if precio >= 20 and precio <= 30:
     piva=precio+(precio/100)*10
     pdes=piva-(piva/100)*5
@@ -53,6 +56,7 @@ elif precio > 30:
     piva=precio+(precio/100)*10
     pdes=piva-(piva/100)*15
     des=15
+#se muestran por pantalla los valores
 print("RESUMEN")
 print("Número de pedidos: ",repe)
 print("Total a pagar: ",round(precio,2))
