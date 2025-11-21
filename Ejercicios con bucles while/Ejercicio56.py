@@ -12,41 +12,13 @@ print("1. Coca cola - 2 €")
 print("2. Acuarius - 1.5 €")
 print("3. Agua - 1 €")
 print("Ejemplo de 2 pedidos")
-menu=int(input("Introduce un menu: "))
-comp=int(input("Introduce un acompañamiento: "))
-bebe=int(input("Introduce una bebida: "))
 precio=float(0)
-if menu == 1:
-    precio=precio+9
-elif menu == 2:
-    precio=precio+4.5
-elif menu == 3:
-    precio=precio+2.5
-else:
-    print("El valor introducido no es válido, no se ha seleccionado ningún menú.")
-if comp == 1:
-    precio=precio+1.5
-elif comp == 2:
-    precio=precio+1.75
-elif comp == 3:
-    precio=precio+2
-else:
-    print("El valor introducido no es válido, no se ha seleccionado ningún acompañamiento.")
-if bebe == 1:
-    precio=precio+2
-elif bebe == 2:
-    precio=precio+1.5
-elif bebe == 3:
-    precio=precio+1
-else:
-    print("El valor introducido no es válido, no se ha seleccionado ninguna bebida.")
-repe=int(1)
-sino=str(input("Deseas repetir la operación s/n: "))
+sino="s"
+repe=int(0)
 while sino.lower()=="s":
     menu=int(input("Introduce un menu: "))
     comp=int(input("Introduce un acompañamiento: "))
     bebe=int(input("Introduce una bebida: "))
-    precio=float(0)
     if menu == 1:
         precio=precio+9
     elif menu == 2:
@@ -73,16 +45,16 @@ while sino.lower()=="s":
         print("El valor introducido no es válido, no se ha seleccionado ninguna bebida.")
     repe=repe+1
     sino=str(input("Deseas repetir la operación s/n: "))
-if precio >= 20 or precio <= 30:
-    piva=precio-(precio/100)*10
+if precio >= 20 and precio <= 30:
+    piva=precio+(precio/100)*10
     pdes=piva-(piva/100)*5
     des=5
 elif precio > 30:
-    piva=precio-(precio/100)*10
+    piva=precio+(precio/100)*10
     pdes=piva-(piva/100)*15
     des=15
 print("RESUMEN")
 print("Número de pedidos: ",repe)
-print("Total a pagar: ",precio)
-print("Total con iva: ",piva)
-print(f"Precio total con descuento del {des}%: {pdes}")
+print("Total a pagar: ",round(precio,2))
+print("Total con iva: ",round(piva,2))
+print(f"Precio total con descuento del {des}%: {round(pdes,2)}")
