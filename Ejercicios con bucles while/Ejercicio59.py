@@ -2,7 +2,7 @@
 import random
 topsecret=random.randint(0,1000)
 intentos=int(0)
-adivinaadivinanza=1000000000
+adivinaadivinanza=1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 while int(adivinaadivinanza) != topsecret:
     adivinaadivinanza=input("Introduce el número: ")
     if adivinaadivinanza.isnumeric():
