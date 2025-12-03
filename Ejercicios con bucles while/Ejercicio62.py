@@ -5,6 +5,7 @@ par=""
 imp=""
 if uno > dos:
     for x in range(dos,uno):
+        #si el residuo de dividir entre dos es cero se sabe que es par y sino impar
         if x%2 == 0:
             par=par+str(x)+"-"
         if x%2 != 0:
