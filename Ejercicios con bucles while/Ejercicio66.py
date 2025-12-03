@@ -1,12 +1,14 @@
-#Realiza un programa que permita tirar 100 veces un dado y nos presente por pantalla el número de veces que se repite cada número.
+#Repite el ejercicio 63. En lugar de ‘tirar’ 100 veces un dado, modifica el programa para ver cómo se comporta el dado en lanzamientos producidos durante aprox 3 segundos. 
 import random
+import time
 uno=0
 dos=0
 tres=0
 cuatro=0
 cinco=0
 seis=0
-for x in range(100):
+ahora=time.time()
+while time.time() - ahora < 3:
     dado=random.randint(1,6)
     if dado==1:
         uno=uno+1
