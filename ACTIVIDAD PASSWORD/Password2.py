@@ -42,4 +42,4 @@ print(f"Has introducido {numdef} números de los cuales {numsml} fueron menores 
 #Prueba 1: ........, .........., ............ Resultado: Has introducido 0 contraseñas válidas. Has introducido 3 contraseñas inválidas.
 #Has introducido 0 números de los cuales 0 fueron menores que 5 y 0 fueron mayores o iguales que 5, 0 letras de las cuales 0 fueron mayúsculas y 0 fueron minúsculas y 30 símbolos.
 #Esta prueba sirve mucho para ver huecos en el código y parece ser que ha salido bien.
-#Prueba 2: 
+#Prueba 2: AsDfGhJkLñ, 1234567890, ª!"·$%&/()=?¿ Resultado: 
