@@ -1,6 +1,7 @@
 #En esta versión, no debes contemplar que se cumplan las condiciones en las posiciones de los índices, pero sí que el total de criterios se cumplan: 3 números (distinguiendo rangos), 3 letras (distinguiendo mayúsculas o minúsculas), 2 símbolos, etc.
 bien=int(0)
 numdef=int(0)
+#He decidido añadir unas condiciones para especificar más en el mensaje final, para mostrar cuantos números hay en cada rango
 numbig=int(0)
 numsml=int(0)
 letdef=int(0)
@@ -38,3 +39,7 @@ for pas in range(0,3):
 print(f"Has introducido {bien} contraseñas válidas.")
 print(f"Has introducido {3-bien} contraseñas inválidas.")
 print(f"Has introducido {numdef} números de los cuales {numsml} fueron menores que 5 y {numbig} fueron mayores o iguales que 5, {letdef} letras de las cuales {letbig} fueron mayúsculas y {letsml} fueron minúsculas y {simdef} símbolos.")
+#Prueba 1: ........, .........., ............ Resultado: Has introducido 0 contraseñas válidas. Has introducido 3 contraseñas inválidas.
+#Has introducido 0 números de los cuales 0 fueron menores que 5 y 0 fueron mayores o iguales que 5, 0 letras de las cuales 0 fueron mayúsculas y 0 fueron minúsculas y 30 símbolos.
+#Esta prueba sirve mucho para ver huecos en el código y parece ser que ha salido bien.
+#Prueba 2: 
