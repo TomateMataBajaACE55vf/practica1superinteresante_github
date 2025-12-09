@@ -21,9 +21,9 @@ for pos in range(len(password)):
         if int(password[pos]) <= 5 or int(password[pos]) >= 6:
             num6_5=num6_5+1
     elif password[pos].isalpha():
-        if password[pos].islower:
+        if password[pos].islower():
             letsml=letsml+1
-        elif password[pos].isupper:
+        elif password[pos].isupper():
             letbig=letbig+1
 if num1_5 > 1 and num6_5 > 0 and simdef > 1 and letbig > 0 and letsml > 1:
     print("password correcto")
