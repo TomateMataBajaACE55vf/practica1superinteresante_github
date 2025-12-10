@@ -16,7 +16,7 @@ while sino == "s":
     time.sleep(3)
     res2=str(input("¿Cómo se llama el recurso con el que se desbloquean brawlers?: "))
     res2=res2.lower()
-    if "créditos" or "creditos" in res2:
+    if "créditos" in res2 or "creditos" in res2:
         print("¡Correcto!")
         point=point+1
     else:
@@ -34,7 +34,7 @@ while sino == "s":
     time.sleep(3)
     res4=str(input("¿Cómo se llaman las notas de Melodie?: "))
     res4=res4.lower()
-    if "chichi" and "yoyo" in res4:
+    if "chichi" in res4 and "yoyo" in res4:
         print("¡Correcto!")
         point=point+1
     else:
