@@ -8,7 +8,7 @@ while sino == "s":
     res1=str(input("¿Cuál es la comida favorita de Mortis?: "))
     res1=res1.lower()
     point=0
-    if "muro" in res1:
+    if "" in res1:
         print("¡Correcto!")
         point=point+1
     else:
