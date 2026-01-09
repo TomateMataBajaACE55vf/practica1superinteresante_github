@@ -4,12 +4,12 @@ root = tk.Tk()
 root.geometry("3840x2160")
 root.title("Totalmente no es un virus.exe")
 def on_button_click():
-    for x in range(5):
-        cacota = tk.Tk()
-        cacota.geometry("640x480")
-        cacota.title("NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.exe")
-        caca = tk.Label(cacota, text="¡NO!", font=("Arial", 100, "bold"))
-        caca.pack()
+    cacota = tk.Tk()
+    cacota.geometry("3840x2160")
+    cacota.title("NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.exe")
+    caca = tk.Label(cacota, text="¡NO!", font=("Arial", 100, "bold"))
+    caca.pack()
+    root.after(100, on_button_click)
 # Add a label widget
 label = tk.Label(root, text="¡Juega al Dandys World!", font=("Arial", 50, "bold"))
 label.pack()
