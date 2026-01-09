@@ -1,17 +1,18 @@
 import tkinter as tk
-from tkinter import ttk
 # Create the main application window
 root = tk.Tk()
-root.geometry("1920x1080")
+root.geometry("3840x2160")
 root.title("Totalmente no es un virus.exe")
-cacota = tk.Tk()
-cacota.geometry("1280x720")
-cacota.title("Totalmente no es un virus.exe")
+def on_button_click():
+    for x in range(5):
+        cacota = tk.Tk()
+        cacota.geometry("640x480")
+        cacota.title("NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.exe")
+        caca = tk.Label(cacota, text="¡NO!", font=("Arial", 100, "bold"))
+        caca.pack()
 # Add a label widget
 label = tk.Label(root, text="¡Juega al Dandys World!", font=("Arial", 50, "bold"))
 label.pack()
-caca = tk.Label(cacota, text="¡NO!", font=("Arial", 100, "bold"))
-caca.pack()
 # Add a button widget
 btn = tk.Button(
     root,
@@ -22,7 +23,8 @@ btn = tk.Button(
     font=("Arial", 100, "bold"),  # Font style
     width=15, height=2,    # Size in text units
     relief=tk.RAISED,      # RAISED, SUNKEN, FLAT, GROOVE, RIDGE
-    cursor="hand2"         # Mouse cursor style
+    cursor="hand2",         # Mouse cursor style
+    command=on_button_click
 )
 btn.pack(pady=10)
 # Run the application
