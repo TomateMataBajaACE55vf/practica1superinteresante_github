@@ -3,13 +3,15 @@ import tkinter as tk
 root = tk.Tk()
 root.geometry("3840x2160")
 root.title("Totalmente no es un virus.exe")
+root.attributes(fullscreen="True")
 def on_button_click():
     cacota = tk.Tk()
-    cacota.geometry("3840x2160")
+    cacota.geometry("1920x1080")
     cacota.title("NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.exe")
-    caca = tk.Label(cacota, text="¡NO!", font=("Arial", 100, "bold"))
+    cacota.attributes(fullscreen="True")
+    caca = tk.Label(cacota, text="¡NO!", font=("Arial", 500, "bold"))
     caca.pack()
-    root.after(100, on_button_click)
+    root.after(1, on_button_click)
 # Add a label widget
 label = tk.Label(root, text="¡Juega al Dandys World!", font=("Arial", 50, "bold"))
 label.pack()

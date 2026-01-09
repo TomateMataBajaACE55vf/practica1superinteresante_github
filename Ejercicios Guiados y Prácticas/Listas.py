@@ -1,12 +1,8 @@
 milista=[1,2,3,4,5,6]
-milistapor2=[]
+milistapor2=[pos*2 for pos in milista]
 maximo=max(milista)
 minimo=min(milista)
 suma=sum(milista)
-
-for pos in milista:
-    num2=pos*2
-    milistapor2.append(num2)
 
 print(milista)
 print("Máximo: ",maximo)
