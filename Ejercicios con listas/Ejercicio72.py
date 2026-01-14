@@ -1,4 +1,4 @@
-#Haz un programa que permita al usuario introducir letras en una lista (cantidad indefinida), en esta lista no deben almacenarse las letras que se han introducido repetidas.
+#A partir del ejercicio anterior, se da por hecho que las vocales con o sin acento son repetidas y no deben almacenarse en la lista
 sino="s"
 letras=[]
 while sino == "s":
@@ -7,8 +7,16 @@ while sino == "s":
         letra=str(input("Introduce una letra: "))
         if len(str(letra)) != 1:
             letra=999
-    if letra == "áà":
+    if letra in "áà":
         letra="a"
+    if letra in "éè":
+        letra="e"
+    if letra in "íìï":
+        letra="i"
+    if letra in "óò":
+        letra="o"
+    if letra in "úùü":
+        letra="u"
     letras.append(str(letra))
     sino=str(input("Deseas repetir (s/n): "))
 nodupe=list(set(letras))
