@@ -7,8 +7,13 @@ for pos in list1:
         list2.append(pos)
     elif pos.isalpha():
         list3.append(pos)
-list2.sort(key=lambda v: v.lower())
-list3.sort(key=lambda v: v.lower())
+mayusminus=int(input("Introduce 1 para visualizar en orden ascendente o 2 descendente: "))
+if mayusminus == 1:
+    list2.sort(key=str.lower)
+    list3.sort(key=str.lower)
+else:
+    list2.sort(reverse=True,key=str.lower)
+    list3.sort(reverse=True,key=str.lower)
 print(list2)
 print(list3)
     
