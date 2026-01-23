@@ -6,6 +6,22 @@
 #incorrecto. Debe aparecer un mensaje de error.
 #Por cada cálculo que se realice, el programa debe ofrecer la opción de continuar o no, introduciendo
 #las letras “s” o “n”. En caso de seleccionar “n” se visualiza MENÚ del apartado 7.
-letras["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"]
-dni=input("Introduce un DNI: ")
-if len(dni) !=
+letras=["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"]
+dnis=[]
+sino="s"
+while sino in "Ss":
+    dni=input("Introduce un DNI: ")
+    dnis.append(dni)
+    if len(dni) != 8:
+        print("El valor introducido tiene una longitud incorrecta.")
+    for x in range(len(dni)):
+        if str(dni[x]).isnumeric() == False:
+            print("El valor introducido tiene que ser numérico.")
+            break
+    sino=input("Deseas introducir otro DNI (s/n): ")
+    while sino.isalnum() == False:
+        print("Respuesta incorrecta.")
+        sino=input("Deseas introducir otro DNI (s/n): ")
+    while sino not in "Ss" and sino not in "Nn":
+        print("Respuesta incorrecta.")
+        sino=input("Deseas introducir otro DNI (s/n): ")
