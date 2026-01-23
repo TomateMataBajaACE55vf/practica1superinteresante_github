@@ -13,8 +13,10 @@
 #    print("Tu palabra empieza con una vocal.")
 #else:
 #    print("Tu palabra no empieza con una vocal.")
-from statistics import median
-
-pythonic_machine_ages = [1,2,3,4,5,6,7,8]
-
-print(median(pythonic_machine_ages))
+#from statistics import median
+#
+#pythonic_machine_ages = [1,2,3,4,5,6,7,8]
+#
+#print(median(pythonic_machine_ages))
+a=[]
+print(a==[])

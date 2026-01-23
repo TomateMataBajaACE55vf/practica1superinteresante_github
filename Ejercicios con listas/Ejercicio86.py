@@ -8,16 +8,24 @@
 #las letras “s” o “n”. En caso de seleccionar “n” se visualiza MENÚ del apartado 7.
 letras=["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"]
 dnis=[]
+tries=[]
 sino="s"
 while sino in "Ss":
     dni=input("Introduce un DNI: ")
     dnis.append(dni)
     if len(dni) != 8:
         print("El valor introducido tiene una longitud incorrecta.")
-    for x in range(len(dni)):
-        if str(dni[x]).isnumeric() == False:
-            print("El valor introducido tiene que ser numérico.")
-            break
+        tries.append(0)
+    else:
+        for x in range(len(dni)):
+            if str(dni[x]).isnumeric() == False:
+                print("El valor introducido tiene que ser numérico.")
+                tries.append(1)
+                break
+    if tries == []:
+        if dni/23 > 22:
+            print("El valor del DNI es incorrecto.")
+            tries.append(2)
     sino=input("Deseas introducir otro DNI (s/n): ")
     while sino.isalnum() == False:
         print("Respuesta incorrecta.")
