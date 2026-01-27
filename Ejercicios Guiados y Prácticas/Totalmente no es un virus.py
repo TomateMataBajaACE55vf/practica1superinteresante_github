@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import ttk
 # Create the main application window
 root = tk.Tk()
 root.geometry("3840x2160")
@@ -16,15 +17,15 @@ def on_button_click():
 label = tk.Label(root, text="¡Juega al Dandys World!", font=("Arial", 50, "bold"))
 label.pack()
 # Add a button widget
-btn = tk.Button(
+btn = ttk.Button(
     root,
     text="Cerrar",       # Text on the button
-    state=tk.NORMAL,       # NORMAL or DISABLED
-    bg="red",        # Background color
-    fg="white",            # Text color
-    font=("Arial", 100, "bold"),  # Font style
-    width=15, height=2,    # Size in text units
-    relief=tk.RAISED,      # RAISED, SUNKEN, FLAT, GROOVE, RIDGE
+    #state=ttk.NORMAL,       # NORMAL or DISABLED
+    #bg="red",        # Background color
+    #fg="white",            # Text color
+    #font=("Arial", 100, "bold"),  # Font style
+    #width=15, #height=2,    # Size in text units
+    #relief=ttk.RAISED,      # RAISED, SUNKEN, FLAT, GROOVE, RIDGE
     cursor="hand2",         # Mouse cursor style
     command=on_button_click
 )

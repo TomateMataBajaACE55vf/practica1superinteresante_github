@@ -7,29 +7,55 @@
 #Por cada cálculo que se realice, el programa debe ofrecer la opción de continuar o no, introduciendo
 #las letras “s” o “n”. En caso de seleccionar “n” se visualiza MENÚ del apartado 7.
 letras=["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"]
-dnis=[]
+dnino=[]
+dnisi=[]
 tries=[]
 sino="s"
 while sino in "Ss":
+    nisinino=0
     dni=input("Introduce un DNI: ")
-    dnis.append(dni)
     if len(dni) != 8:
         print("El valor introducido tiene una longitud incorrecta.")
         tries.append(0)
+        nisinino=1
+        dnino.append(dni)
     else:
         for x in range(len(dni)):
             if str(dni[x]).isnumeric() == False:
                 print("El valor introducido tiene que ser numérico.")
                 tries.append(1)
+                nisinino=1
+                dnino.append(dni)
                 break
-    if tries == []:
-        if dni/23 > 22:
+    if nisinino == 0:
+        divi=float(dni)%23
+        if divi > 22:
             print("El valor del DNI es incorrecto.")
             tries.append(2)
+            dnino.append(dni)
+        else:
+            dni=dni+"-"+letras[int(divi)]
+            dnisi.append(dni)
+            print(dni) 
     sino=input("Deseas introducir otro DNI (s/n): ")
-    while sino.isalnum() == False:
+    while sino not in "Ss" and sino not in "Nn" or sino.isalnum() == False:
         print("Respuesta incorrecta.")
         sino=input("Deseas introducir otro DNI (s/n): ")
-    while sino not in "Ss" and sino not in "Nn":
-        print("Respuesta incorrecta.")
-        sino=input("Deseas introducir otro DNI (s/n): ")
+print("RESULTADOS. Escoge una opción:")
+print("1. Listar NIF correcto ordenado de menor a mayor")
+print("2. Listar DNI incorrecto ordenado de menor a mayor")
+print("3. Número total de errores producidos")
+print("4. Número total de DNI correctos")
+print("5. Porcentajes intentos con error y sin error")
+print("6. Salir s/n")
+nosi=0
+while str(nosi) not in "12345" or nosi not in "SnNn":
+    print("Respuesta inválida")
+    print("RESULTADOS. Escoge una opción:")
+    print("1. Listar NIF correcto ordenado de menor a mayor")
+    print("2. Listar DNI incorrecto ordenado de menor a mayor")
+    print("3. Número total de errores producidos")
+    print("4. Número total de DNI correctos")
+    print("5. Porcentajes intentos con error y sin error")
+    print("6. Salir s/n")
+    nosi=input("Introduce una opción: ")
