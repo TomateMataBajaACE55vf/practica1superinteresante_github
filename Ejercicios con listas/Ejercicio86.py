@@ -58,7 +58,6 @@ while final == 0:
         final=1
     if nosi.isnumeric():
         nosi=float(nosi)
-        final=1
     if nosi == 1:
         print(dnisi)
         final=1
