@@ -53,9 +53,10 @@ while final == 0:
     print("5. Porcentajes intentos con error y sin error")
     print("6. Salir s/n")
     nosi=input("Introduce una opción: ")
-    if nosi in "SsNn":
-        print("Programa finalizado")
-        final=1
+    if nosi.isalnum():
+        if nosi in "SsNn":
+            print("Programa finalizado")
+            final=1
     if nosi.isnumeric():
         nosi=float(nosi)
     if nosi == 1:
