@@ -11,23 +11,21 @@ dnino=[]
 dnisi=[]
 tries=[]
 sino="s"
+#Hechas las variables predeterminadas se crea un bucle que define si se repite o no el programa creador de DNIs
 while sino in "Ss":
-    nisinino=0
     dni=input("Introduce un DNI: ")
+    #Después de introducir el DNI, se observa si tiene una longitud correcta y si son números
     if len(dni) != 8:
         print("El valor introducido tiene una longitud incorrecta.")
         tries.append(0)
-        nisinino=1
         dnino.append(dni)
     elif len(dni) == 8:
-        for x in range(len(dni)):
-            if str(dni[x]).isnumeric() == False:
-                print("El valor introducido tiene que ser numérico.")
-                tries.append(1)
-                nisinino=1
-                dnino.append(dni)
-                break
-    if nisinino == 0:
+        if str(dni).isnumeric() == False:
+            print("El valor introducido tiene que ser numérico.")
+            tries.append(1)
+            dnino.append(dni)
+    #Si cumple, se pasa a dividir entre 23 y si el número es mayor que 22 da error, pero sino se guarda el dni con su letra la cual está seleccionada de una lista
+    if str(dni).isnumeric():
         divi=float(dni)%23
         if divi > 22:
             print("El valor del DNI es incorrecto.")
@@ -39,12 +37,15 @@ while sino in "Ss":
             print(dni) 
             tries.append(3)
     sino=input("Deseas introducir otro DNI (s/n): ")
+    #Mientras la respuesta no sea SsNn o alfanumérico no acabará el bucle que pregunta
     while sino not in "Ss" and sino not in "Nn" or sino.isalnum() == False:
         print("Respuesta incorrecta.")
         sino=input("Deseas introducir otro DNI (s/n): ")
+#Se crean dos variables nosi para saber la opción y final para saber si se finaliza el programa
 nosi=0
 final=0
-while final == 0:
+while final != 1:
+    final=0
     print("RESULTADOS. Escoge una opción:")
     print("1. Listar NIF correcto ordenado de menor a mayor")
     print("2. Listar DNI incorrecto ordenado de menor a mayor")
@@ -53,10 +54,13 @@ while final == 0:
     print("5. Porcentajes intentos con error y sin error")
     print("6. Salir s/n")
     nosi=input("Introduce una opción: ")
+    #Depende del valor indicado se ejecuta una opción
     if nosi.isalnum():
-        if nosi in "SsNn":
+        if nosi in "Ss":
             print("Programa finalizado")
             final=1
+        if nosi in "Nn":
+            final=2
     if nosi.isnumeric():
         nosi=float(nosi)
     if nosi == 1:
@@ -79,5 +83,6 @@ while final == 0:
         print("El % de DNI con error de dígitos es: ",round(tries.count(1)/len(tries)*100,1))
         print("El % de DNI que no existen es: ",round(tries.count(2)/len(tries)*100,1))
         final=1
+    #Como cada vez que se introduce un valor correcto final cambia a 1 o 2 si sigue siendo 0 resultará en un mensaje de error
     if final == 0:
         print("Respuesta inválida")
