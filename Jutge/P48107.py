@@ -1,0 +1,5 @@
+nums=input()
+list1=nums.split()
+divi=int(float(list1[0])//float(list1[1]))
+rest=int(float(list1[0])%float(list1[1]))
+print(f"{divi} {rest}")
