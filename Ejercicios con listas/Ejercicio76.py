@@ -16,4 +16,3 @@ else:
     list3.sort(reverse=True,key=str.lower)
 print(list2)
 print(list3)
-    
