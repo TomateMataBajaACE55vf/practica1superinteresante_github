@@ -18,5 +18,8 @@
 #pythonic_machine_ages = [1,2,3,4,5,6,7,8]
 #
 #print(median(pythonic_machine_ages))
-a=[]
-print(a==[])
+import time
+start = time.time()
+time.sleep(3)
+end = time.time()
+print(end - start)
