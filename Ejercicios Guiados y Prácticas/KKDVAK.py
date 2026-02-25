@@ -18,8 +18,10 @@
 #pythonic_machine_ages = [1,2,3,4,5,6,7,8]
 #
 #print(median(pythonic_machine_ages))
-import time
-start = time.time()
-time.sleep(3)
-end = time.time()
-print(end - start)
+from datetime import date,datetime
+hoy=date.today()
+fecha=hoy.strftime("%d/%m/%Y")
+hora=datetime.now()
+hora=hora.strftime('%H:%M')
+print("Fecha actual:", fecha)
+print(hora)
