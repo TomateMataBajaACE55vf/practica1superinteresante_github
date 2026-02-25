@@ -1,7 +1,10 @@
 import random
 import time
+from datetime import date, datetime
 Lista_palabrasecreta=["palabra","zanguango","competitivo","obtuso","itinerario","longaniza","almendra","matadora","Benidorm","miranda"]
 sino="s"
+tilde="áéíóú"
+sinti="aeiou"
 while sino in "Ss":
     tiempo1=time.perf_counter()
     Lista_aciertos=[]
@@ -10,6 +13,7 @@ while sino in "Ss":
     Lista_ahorcado=["_","_","_","_","_","_","_","_"]
     secret=str(random.choice(Lista_palabrasecreta))
     Lista_palabrasecreta.remove(secret)
+    palabra=secret
     secret=list(secret)
     for x in range(len(secret)):
         Lista_partida.append("_")
@@ -24,6 +28,19 @@ while sino in "Ss":
         while len(letra) != 1 or letra.isalpha() == False:
             print("Lo que has introducido es incorrecto.")
             letra=str(input("Introduce una letra: "))
+        if letra.lower() in tilde or letra.upper() in tilde:
+            for z in tilde:
+                pos=pos+1
+                if z == letra:
+                    Lista_partida.pop(pos)
+                    Lista_partida.insert(pos,sinti[pos])
+                elif z == letra.lower():
+                    Lista_partida.pop(pos)
+                    Lista_partida.insert(pos,sinti[pos])
+                elif z == letra.upper():
+                    Lista_partida.pop(pos)
+                    Lista_partida.insert(pos,sinti[pos])
+            pos=-1
         if letra.lower() in secret or letra.upper() in secret:
             for y in secret:
                 pos=pos+1
@@ -33,7 +50,7 @@ while sino in "Ss":
                 elif y == letra.lower():
                     Lista_partida.pop(pos)
                     Lista_partida.insert(pos,y)
-                elif y == letra.lower():
+                elif y == letra.upper():
                     Lista_partida.pop(pos)
                     Lista_partida.insert(pos,y)
             print("[ "+ " , ".join(Lista_partida)+ " ]")
@@ -44,12 +61,27 @@ while sino in "Ss":
             Lista_ahorcado.insert(error,["A","H","O","R","C","A","D","O"][error])
             print(*Lista_ahorcado)
             Lista_errores.append(letra)
+    print("La palabra era ",palabra)
     tiempo2=time.perf_counter()
     print("Aciertos: ",len(Lista_aciertos))
     print("Errores: ",len(Lista_errores))
-    ttotal=round(tiempo2-tiempo1,0)
-    if 
-    print("Tiempo utilizado: ",int(ttotal)," segundos")
+    stotal=round(tiempo2-tiempo1,0)
+    mtotal=0
+    while stotal > 60:
+        mtotal=mtotal+1
+        stotal=stotal-60
+    txt=open("Partidas.txt", "a")
+    hoy=date.today()
+    fecha=hoy.strftime("%d/%m/%Y")
+    hora=datetime.now()
+    hora=hora.strftime('%H:%M')
+    txt.write("Fecha de la partida: ",fecha)
+    txt.write("Hora de la partida: ",hora)
+    txt.write("Palabra secreta: ",palabra)
+    txt.write("Número de aciertos: ",len(Lista_aciertos))
+    txt.write("Número de errores: ",len(Lista_errores))
+    txt.close()
+    print(f"Tiempo utilizado: {mtotal} minutos y {int(stotal)} segundos")
     sino=input("Deseas continuar (s/n): ")
     while sino not in "Ss" and sino not in "Nn" or sino.isalpha() == False:
         print("Respuesta incorrecta.")
