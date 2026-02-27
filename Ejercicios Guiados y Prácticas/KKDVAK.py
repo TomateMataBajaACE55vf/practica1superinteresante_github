@@ -18,10 +18,12 @@
 #pythonic_machine_ages = [1,2,3,4,5,6,7,8]
 #
 #print(median(pythonic_machine_ages))
-from datetime import date,datetime
-hoy=date.today()
-fecha=hoy.strftime("%d/%m/%Y")
-hora=datetime.now()
-hora=hora.strftime('%H:%M')
-print("Fecha actual:", fecha)
-print(hora)
+#from datetime import date,datetime
+#hoy=date.today()
+#fecha=hoy.strftime("%d/%m/%Y")
+#hora=datetime.now()
+#hora=hora.strftime('%H:%M')
+#print("Fecha actual:", fecha)
+#print(hora)
+with open("ejemplo.txt", "a", encoding="utf-8") as f:
+    f.write("Nueva línea\n")

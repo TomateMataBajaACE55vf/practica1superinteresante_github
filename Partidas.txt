@@ -1,0 +1,5 @@
+Fecha de la partida: 27/02/2026
+Hora de la partida: 16:00
+Palabra secreta: competitivo
+Número de aciertos: 3
+Número de errores: 2
