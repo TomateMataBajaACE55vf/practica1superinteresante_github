@@ -76,7 +76,7 @@ while sino in "Ss":
     while stotal > 60:
         mtotal=mtotal+1
         stotal=stotal-60
-    txt=open("Partidas.txt", "a")
+    txt=open("Partidas.txt", "a", encoding="utf-8")
     hoy=date.today()
     fecha=hoy.strftime("%d/%m/%Y")
     hora=datetime.now()

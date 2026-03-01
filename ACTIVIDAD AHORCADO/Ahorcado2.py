@@ -1,5 +1,3 @@
-#!/usr/bin/python
-# coding: latin-1
 import random
 import time
 from datetime import date, datetime
@@ -87,7 +85,7 @@ while sino in "Ss":
     while stotal > 60:
         mtotal=mtotal+1
         stotal=stotal-60
-    txt=open("Partidas.txt", "a")
+    txt=open("Partidas.txt", "a", encoding="utf-8")
     hoy=date.today()
     fecha=hoy.strftime("%d/%m/%Y")
     hora=datetime.now()
@@ -129,51 +127,51 @@ while sino in "Ss":
             while eleccion not in "01234567" or eleccion.isnumeric() == False:
                 print("Respuesta incorrecta.")
                 eleccion=input("¿Qué deseas comprar?: ")
-            if eleccion==0:
+            if float(eleccion)==0:
                 print("Cerrando tienda.")
-            elif eleccion==1:
+            elif float(eleccion)==1:
                 if puntos >= 2:
                     com1+=1
                     puntos-=2
                     print("Has adquirido el comodín aleatorio.")
                 else:
                     print("No tienes puntos suficientes.")
-            elif eleccion==2:
+            elif float(eleccion)==2:
                 if puntos >= 5:
                     com2+=1
                     puntos-=5
                     print("Has adquirido el comodín de vocales.")
                 else:
                     print("No tienes puntos suficientes.")
-            elif eleccion==3:
+            elif float(eleccion)==3:
                 if puntos >= 10:
                     por2+=1
                     puntos-=10
                     print("Has adquirido un multiplicador por 2.")
                 else:
                     print("No tienes puntos suficientes.")
-            elif eleccion==4:
+            elif float(eleccion)==4:
                 if puntos >= 20:
                     por3+=1
                     puntos-=20
                     print("Has adquirido un multiplicador por 3.")
                 else:
                     print("No tienes puntos suficientes.")
-            elif eleccion==5:
+            elif float(eleccion)==5:
                 if puntos >= 30:
                     por4+=1
                     puntos-=30
                     print("Has adquirido un multiplicador por 4.")
                 else:
                     print("No tienes puntos suficientes.")
-            elif eleccion==6:
+            elif float(eleccion)==6:
                 if puntos >= 50:
                     por5+=1
                     puntos-=50
                     print("Has adquirido un multiplicador por 5.")
                 else:
                     print("No tienes puntos suficientes.")
-            elif eleccion==7:
+            elif float(eleccion)==7:
                 if puntos >= 50:
                     dicc="Sí"
                     puntos-=50
