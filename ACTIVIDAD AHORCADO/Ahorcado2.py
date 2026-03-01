@@ -7,6 +7,14 @@ Lista_palabrasecreta=["palabra","zanguango","competitivo","obtuso","itinerario",
 sino="s"
 tilde="áéíóú"
 sinti="aeiou"
+puntos=0
+com1=0
+com2=0
+por2=0
+por3=0
+por4=0
+por5=0
+dicc="No"
 while sino in "Ss":
     tiempo1=time.perf_counter()
     Lista_aciertos=[]
@@ -61,12 +69,15 @@ while sino in "Ss":
                         Lista_partida.insert(pos,y)
                 print("[ "+ " , ".join(Lista_partida)+ " ]")
                 Lista_aciertos.append(letra)
+                puntos+=1
             else:
                 error=error+1
                 Lista_ahorcado.pop(error)
                 Lista_ahorcado.insert(error,["A","H","O","R","C","A","D","O"][error])
                 print(*Lista_ahorcado)
                 Lista_errores.append(letra)
+    if Lista_partida == secret:
+        puntos+=10
     print("La palabra era",palabra)
     tiempo2=time.perf_counter()
     print("Aciertos:",len(Lista_aciertos))
@@ -98,6 +109,91 @@ while sino in "Ss":
             print("Respuesta incorrecta.")
             nuevo=input("Introduce la palabra: ")
         Lista_palabrasecreta.append(nuevo)
+    nisinino=input("¿Deseas abrir la tienda? (s/n): ")
+    while nisinino not in "Ss" and nisinino not in "Nn" or nisinino.isalpha() == False:
+        print("Respuesta incorrecta.")
+        nisinino=input("¿Deseas abrir la tienda? (s/n): ")
+    if nisinino in "Ss":
+        compras="s"
+        while compras in "Ss":
+            print("Bienvenido a la tienda")
+            print("1. Comodín letra aleatoria - 2 puntos")
+            print("2. Comodín revelar vocales - 5 puntos")
+            print("3. Multiplicador de puntos x2 - 10 puntos")
+            print("4. Multiplicador de puntos x3 - 20 puntos")
+            print("5. Multiplicador de puntos x4 - 30 puntos")
+            print("6. Multiplicador de puntos x5 - 50 puntos")
+            print("7. Modo diccionario - 50 puntos")
+            print("0. Salir de la tienda")
+            eleccion=input("¿Qué deseas comprar?: ")
+            while eleccion not in "01234567" or eleccion.isnumeric() == False:
+                print("Respuesta incorrecta.")
+                eleccion=input("¿Qué deseas comprar?: ")
+            if eleccion==0:
+                print("Cerrando tienda.")
+            elif eleccion==1:
+                if puntos >= 2:
+                    com1+=1
+                    puntos-=2
+                    print("Has adquirido el comodín aleatorio.")
+                else:
+                    print("No tienes puntos suficientes.")
+            elif eleccion==2:
+                if puntos >= 5:
+                    com2+=1
+                    puntos-=5
+                    print("Has adquirido el comodín de vocales.")
+                else:
+                    print("No tienes puntos suficientes.")
+            elif eleccion==3:
+                if puntos >= 10:
+                    por2+=1
+                    puntos-=10
+                    print("Has adquirido un multiplicador por 2.")
+                else:
+                    print("No tienes puntos suficientes.")
+            elif eleccion==4:
+                if puntos >= 20:
+                    por3+=1
+                    puntos-=20
+                    print("Has adquirido un multiplicador por 3.")
+                else:
+                    print("No tienes puntos suficientes.")
+            elif eleccion==5:
+                if puntos >= 30:
+                    por4+=1
+                    puntos-=30
+                    print("Has adquirido un multiplicador por 4.")
+                else:
+                    print("No tienes puntos suficientes.")
+            elif eleccion==6:
+                if puntos >= 50:
+                    por5+=1
+                    puntos-=50
+                    print("Has adquirido un multiplicador por 5.")
+                else:
+                    print("No tienes puntos suficientes.")
+            elif eleccion==7:
+                if puntos >= 50:
+                    dicc="Sí"
+                    puntos-=50
+                    print("Has adquirido el modo diccionario.")
+                else:
+                    print("No tienes puntos suficientes.")
+            print("Este es tu inventario:")
+            print(f"Puntos: {puntos}")
+            print(f"Comodín letra aleatoria: {com1}")
+            print(f"Comodín revelar vocales: {com2}")
+            print(f"Multiplicador x2: {por2}")
+            print(f"Multiplicador x3: {por3}")
+            print(f"Multiplicador x4: {por4}")
+            print(f"Multiplicador x5: {por5}")
+            print(f"Modo diccionario: {dicc}")
+            if eleccion != 0:
+                compras=input("¿Deseas seguir comprando? (s/n): ")
+                while compras not in "Ss" and compras not in "Nn" or compras.isalpha() == False:
+                    print("Respuesta incorrecta.")
+                    compras=input("¿Deseas seguir comprando? (s/n): ")
     sino=input("¿Deseas continuar? (s/n): ")
     while sino not in "Ss" and sino not in "Nn" or sino.isalpha() == False:
         print("Respuesta incorrecta.")

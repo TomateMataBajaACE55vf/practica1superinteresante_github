@@ -1,5 +1,10 @@
-Fecha de la partida: 27/02/2026
-Hora de la partida: 16:00
+Fecha de la partida: 01/03/2026
+Hora de la partida: 22:25
 Palabra secreta: competitivo
 Número de aciertos: 3
+Número de errores: 2
+Fecha de la partida: 01/03/2026
+Hora de la partida: 22:38
+Palabra secreta: zanguango
+Número de aciertos: 2
 Número de errores: 2
