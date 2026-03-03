@@ -5,7 +5,7 @@ Lista_palabrasecreta=["palabra","zanguango","competitivo","obtuso","itinerario",
 sino="s"
 tilde="áéíóú"
 sinti="aeiou"
-puntos=0
+puntos=100
 com1=0
 com2=0
 por2=0
@@ -14,19 +14,72 @@ por4=0
 por5=0
 dicc="No"
 while sino in "Ss":
-    tiempo1=time.perf_counter()
-    Lista_aciertos=[]
-    Lista_errores=[]
-    Lista_partida=[]
-    Lista_ahorcado=["_","_","_","_","_","_","_","_"]
-    secret=str(random.choice(Lista_palabrasecreta))
-    Lista_palabrasecreta.remove(secret)
-    palabra=secret
-    secret=list(secret)
-    for x in range(len(secret)):
-        Lista_partida.append("_")
-    print("[ "+ " , ".join(Lista_partida)+ " ]")
-    error=-1
+    if dicc == "Sí":
+        dic=open("Diccionario.txt", "r", encoding="utf-8")
+        dic=dic.read().splitlines()
+        tiempo1=time.perf_counter()
+        Lista_aciertos=[]
+        Lista_errores=[]
+        Lista_partida=[]
+        Lista_ahorcado=["_","_","_","_","_","_","_","_"]
+        secret=str(random.choice(dic))
+        dic.remove(secret)
+        palabra=secret
+        secret=list(secret)
+        for x in range(len(secret)):
+            Lista_partida.append("_")
+        print("[ "+ " , ".join(Lista_partida)+ " ]")
+        error=-1
+    else:
+        tiempo1=time.perf_counter()
+        Lista_aciertos=[]
+        Lista_errores=[]
+        Lista_partida=[]
+        Lista_ahorcado=["_","_","_","_","_","_","_","_"]
+        secret=str(random.choice(Lista_palabrasecreta))
+        Lista_palabrasecreta.remove(secret)
+        palabra=secret
+        secret=list(secret)
+        for x in range(len(secret)):
+            Lista_partida.append("_")
+        print("[ "+ " , ".join(Lista_partida)+ " ]")
+        error=-1
+    if por2 != 0 or por3 != 0 or por4 != 0 or por5 != 0:
+        mult=input("¿Deseas usar algún multiplicador? (2/3/4/5/0): ")
+        while mult not in "23450" or mult.isnumeric() == False:
+            print("Respuesta incorrecta.")
+            mult=input("¿Deseas usar algún multiplicador? (2/3/4/5/0): ")
+        while float(mult) != 0:
+            mult=float(mult)
+            if mult == 2:
+                if por2 == 0:
+                    print("No tienes multiplicadores de este tipo.")
+                else:
+                    mult=2
+                    por2-=1
+            elif mult == 3:
+                if por3 == 0:
+                    print("No tienes multiplicadores de este tipo.")
+                else:
+                    mult=3
+                    por3-=1
+            elif mult == 4:
+                if por4 == 0:
+                    print("No tienes multiplicadores de este tipo.")
+                else:
+                    mult=4
+                    por4-=1
+            elif mult == 5:
+                if por5 == 0:
+                    print("No tienes multiplicadores de este tipo.")
+                else:
+                    mult=5
+                    por5-=1
+            elif mult == 0:
+                print("Recibido, sin multiplicadores.")
+                mult=1
+    else:
+        mult=1
     while Lista_ahorcado != ["A","H","O","R","C","A","D","O"] and Lista_partida != secret:
         pos=-1
         letra=str(input("Introduce una letra: "))
@@ -67,7 +120,7 @@ while sino in "Ss":
                         Lista_partida.insert(pos,y)
                 print("[ "+ " , ".join(Lista_partida)+ " ]")
                 Lista_aciertos.append(letra)
-                puntos+=1
+                puntos+=1*mult
             else:
                 error=error+1
                 Lista_ahorcado.pop(error)
@@ -75,7 +128,7 @@ while sino in "Ss":
                 print(*Lista_ahorcado)
                 Lista_errores.append(letra)
     if Lista_partida == secret:
-        puntos+=10
+        puntos+=10*mult
     print("La palabra era",palabra)
     tiempo2=time.perf_counter()
     print("Aciertos:",len(Lista_aciertos))
@@ -97,6 +150,7 @@ while sino in "Ss":
     txt.write("Número de errores: "+str(len(Lista_errores))+"\n")
     txt.close()
     print(f"Tiempo utilizado: {mtotal} minutos y {int(stotal)} segundos")
+    print(f"Has ganado {puntos} puntos.")
     nosi=input("¿Deseas añadir una palabra? (s/n): ")
     while nosi not in "Ss" and nosi not in "Nn" or nosi.isalpha() == False:
         print("Respuesta incorrecta.")
@@ -106,7 +160,10 @@ while sino in "Ss":
         while nuevo.isalpha() == False:
             print("Respuesta incorrecta.")
             nuevo=input("Introduce la palabra: ")
-        Lista_palabrasecreta.append(nuevo)
+        if dicc == "Sí":
+            dic.append(nuevo)
+        else:
+            Lista_palabrasecreta.append(nuevo)
     nisinino=input("¿Deseas abrir la tienda? (s/n): ")
     while nisinino not in "Ss" and nisinino not in "Nn" or nisinino.isalpha() == False:
         print("Respuesta incorrecta.")

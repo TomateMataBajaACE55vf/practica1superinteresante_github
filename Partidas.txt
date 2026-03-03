@@ -33,3 +33,8 @@ Hora de la partida: 23:22
 Palabra secreta: miranda
 Número de aciertos: 1
 Número de errores: 0
+Fecha de la partida: 03/03/2026
+Hora de la partida: 10:39
+Palabra secreta: itinerario
+Número de aciertos: 3
+Número de errores: 0
