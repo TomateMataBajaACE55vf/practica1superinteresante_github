@@ -38,3 +38,88 @@ Hora de la partida: 10:39
 Palabra secreta: itinerario
 Número de aciertos: 3
 Número de errores: 0
+Fecha de la partida: 04/03/2026
+Hora de la partida: 09:08
+Palabra secreta: obtuso
+Número de aciertos: 0
+Número de errores: 0
+Fecha de la partida: 04/03/2026
+Hora de la partida: 09:09
+Palabra secreta: palabra
+Número de aciertos: 5
+Número de errores: 0
+Fecha de la partida: 04/03/2026
+Hora de la partida: 09:14
+Palabra secreta: matadora
+Número de aciertos: 6
+Número de errores: 0
+Fecha de la partida: 04/03/2026
+Hora de la partida: 09:17
+Palabra secreta: zanguango
+Número de aciertos: 6
+Número de errores: 2
+Fecha de la partida: 04/03/2026
+Hora de la partida: 09:18
+Palabra secreta: itinerario
+Número de aciertos: 3
+Número de errores: 0
+Fecha de la partida: 04/03/2026
+Hora de la partida: 09:20
+Palabra secreta: itinerario
+Número de aciertos: 3
+Número de errores: 0
+Fecha de la partida: 04/03/2026
+Hora de la partida: 09:25
+Palabra secreta: matadora
+Número de aciertos: 1
+Número de errores: 0
+Fecha de la partida: 04/03/2026
+Hora de la partida: 09:26
+Palabra secreta: escintilar
+Número de aciertos: 9
+Número de errores: 7
+Fecha de la partida: 04/03/2026
+Hora de la partida: 09:28
+Palabra secreta: almendra
+Número de aciertos: 7
+Número de errores: 0
+Fecha de la partida: 04/03/2026
+Hora de la partida: 09:29
+Palabra secreta: Benidorm
+Número de aciertos: 8
+Número de errores: 2
+Fecha de la partida: 04/03/2026
+Hora de la partida: 09:31
+Palabra secreta: zanguango
+Número de aciertos: 3
+Número de errores: 2
+Fecha de la partida: 04/03/2026
+Hora de la partida: 09:32
+Palabra secreta: zanguango
+Número de aciertos: 1
+Número de errores: 0
+Fecha de la partida: 04/03/2026
+Hora de la partida: 09:33
+Palabra secreta: palabra
+Número de aciertos: 5
+Número de errores: 0
+Fecha de la partida: 04/03/2026
+Hora de la partida: 09:34
+Palabra secreta: Benidorm
+Número de aciertos: 8
+Número de errores: 2
+Fecha de la partida: 04/03/2026
+Hora de la partida: 09:34
+Palabra secreta: matadora
+Número de aciertos: 6
+Número de errores: 0
+Fecha de la partida: 04/03/2026
+Hora de la partida: 09:35
+Palabra secreta: competitivo
+Número de aciertos: 8
+Número de errores: 1
+Fecha de la partida: 04/03/2026
+Hora de la partida: 09:36
+Palabra secreta: espejado
+Número de aciertos: 7
+Número de errores: 6

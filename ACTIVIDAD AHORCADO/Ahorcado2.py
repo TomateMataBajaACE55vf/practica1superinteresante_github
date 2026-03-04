@@ -5,7 +5,7 @@ Lista_palabrasecreta=["palabra","zanguango","competitivo","obtuso","itinerario",
 sino="s"
 tilde="áéíóú"
 sinti="aeiou"
-puntos=100
+puntos=0
 com1=0
 com2=0
 por2=0
@@ -13,8 +13,14 @@ por3=0
 por4=0
 por5=0
 dicc="No"
+dicsino="N"
 while sino in "Ss":
     if dicc == "Sí":
+        dicsino=input("¿Deseas activar el modo diccionario? (s/n): ")
+        while dicsino not in "Ss" and dicsino not in "Nn" or dicsino.isalpha() == False:
+            print("Respuesta incorrecta.")
+            dicsino=input("¿Deseas activar el modo diccionario? (s/n): ")
+    if dicsino in "Ss":
         dic=open("Diccionario.txt", "r", encoding="utf-8")
         dic=dic.read().splitlines()
         tiempo1=time.perf_counter()
@@ -49,39 +55,67 @@ while sino in "Ss":
         while mult not in "23450" or mult.isnumeric() == False:
             print("Respuesta incorrecta.")
             mult=input("¿Deseas usar algún multiplicador? (2/3/4/5/0): ")
-        while float(mult) != 0:
+        if float(mult) != 0:
             mult=float(mult)
             if mult == 2:
                 if por2 == 0:
                     print("No tienes multiplicadores de este tipo.")
+                    mult=input("¿Deseas usar algún multiplicador? (2/3/4/5/0): ")
                 else:
                     mult=2
                     por2-=1
             elif mult == 3:
                 if por3 == 0:
                     print("No tienes multiplicadores de este tipo.")
+                    mult=input("¿Deseas usar algún multiplicador? (2/3/4/5/0): ")
                 else:
                     mult=3
                     por3-=1
             elif mult == 4:
                 if por4 == 0:
                     print("No tienes multiplicadores de este tipo.")
+                    mult=input("¿Deseas usar algún multiplicador? (2/3/4/5/0): ")
                 else:
                     mult=4
                     por4-=1
             elif mult == 5:
                 if por5 == 0:
                     print("No tienes multiplicadores de este tipo.")
+                    mult=input("¿Deseas usar algún multiplicador? (2/3/4/5/0): ")
                 else:
                     mult=5
                     por5-=1
-            elif mult == 0:
-                print("Recibido, sin multiplicadores.")
-                mult=1
+        else:
+            print("Recibido, sin multiplicadores.")
+            mult=1
     else:
         mult=1
     while Lista_ahorcado != ["A","H","O","R","C","A","D","O"] and Lista_partida != secret:
         pos=-1
+        if com1 != 0 or com2 != 0:
+            como=input("¿Deseas usar un comodín? (1/2/0): ")
+            while como not in "120" or como.isnumeric() == False:
+                print("Respuesta incorrecta.")
+                como=input("¿Deseas usar un comodín? (1/2/0): ")
+            if como == 1:
+                if com1 == 0:
+                    print("No tienes comodines de este tipo.")
+                    mult=input("¿Deseas usar algún multiplicador? (2/3/4/5/0): ")
+                else:
+                    com1-=1
+            elif como == 2:
+                if com2 == 0:
+                    print("No tienes comodines de este tipo.")
+                    mult=input("¿Deseas usar algún multiplicador? (2/3/4/5/0): ")
+                else:
+                    com2-=1
+                    for xy in range(list(sinti)):
+                        pos=-1
+                        for xyz in range(secret)
+                            pos=pos+1
+                            if xy === xyz:
+                                Lista_partida.pop(pos)
+                                Lista_partida.insert(pos,secret[pos])
         letra=str(input("Introduce una letra: "))
         while letra.lower() in Lista_errores or letra.upper() in Lista_errores or letra.lower() in Lista_aciertos or letra.upper() in Lista_aciertos:
             print("Esa letra ya la usaste.")
@@ -120,7 +154,7 @@ while sino in "Ss":
                         Lista_partida.insert(pos,y)
                 print("[ "+ " , ".join(Lista_partida)+ " ]")
                 Lista_aciertos.append(letra)
-                puntos+=1*mult
+                puntos+=1*int(mult)
             else:
                 error=error+1
                 Lista_ahorcado.pop(error)
@@ -128,7 +162,7 @@ while sino in "Ss":
                 print(*Lista_ahorcado)
                 Lista_errores.append(letra)
     if Lista_partida == secret:
-        puntos+=10*mult
+        puntos+=10*int(mult)
     print("La palabra era",palabra)
     tiempo2=time.perf_counter()
     print("Aciertos:",len(Lista_aciertos))
@@ -150,7 +184,7 @@ while sino in "Ss":
     txt.write("Número de errores: "+str(len(Lista_errores))+"\n")
     txt.close()
     print(f"Tiempo utilizado: {mtotal} minutos y {int(stotal)} segundos")
-    print(f"Has ganado {puntos} puntos.")
+    print(f"Tienes {puntos} puntos.")
     nosi=input("¿Deseas añadir una palabra? (s/n): ")
     while nosi not in "Ss" and nosi not in "Nn" or nosi.isalpha() == False:
         print("Respuesta incorrecta.")
@@ -179,7 +213,7 @@ while sino in "Ss":
             print("5. Multiplicador de puntos x4 - 30 puntos")
             print("6. Multiplicador de puntos x5 - 50 puntos")
             print("7. Modo diccionario - 50 puntos")
-            print("0. Salir de la tienda")
+            print("0. Ver inventario")
             eleccion=input("¿Qué deseas comprar?: ")
             while eleccion not in "01234567" or eleccion.isnumeric() == False:
                 print("Respuesta incorrecta.")
@@ -229,10 +263,12 @@ while sino in "Ss":
                 else:
                     print("No tienes puntos suficientes.")
             elif float(eleccion)==7:
-                if puntos >= 50:
+                if puntos >= 50 and dicc == "No":
                     dicc="Sí"
                     puntos-=50
                     print("Has adquirido el modo diccionario.")
+                elif dicc == "Sí":
+                    print("Ya tienes el modo diccionario.")
                 else:
                     print("No tienes puntos suficientes.")
             print("Este es tu inventario:")

@@ -25,5 +25,8 @@
 #hora=hora.strftime('%H:%M')
 #print("Fecha actual:", fecha)
 #print(hora)
-with open("ejemplo.txt", "a", encoding="utf-8") as f:
-    f.write("Nueva línea\n")
+#with open("ejemplo.txt", "a", encoding="utf-8") as f:
+#    f.write("Nueva línea\n")
+puntos=0
+puntos-=1
+print(puntos)

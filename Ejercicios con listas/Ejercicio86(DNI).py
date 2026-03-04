@@ -25,17 +25,18 @@ while sino in "Ss":
             tries.append(1)
             dnino.append(dni)
     #Si cumple, se pasa a dividir entre 23 y si el número es mayor que 22 da error, pero sino se guarda el dni con su letra la cual está seleccionada de una lista
-    if str(dni).isnumeric():
-        divi=float(dni)%23
-        if divi > 22:
-            print("El valor del DNI es incorrecto.")
-            tries.append(2)
-            dnino.append(dni)
-        else:
-            dni=dni+"-"+letras[int(divi)]
-            dnisi.append(dni)
-            print(dni) 
-            tries.append(3)
+    else:
+        if str(dni).isnumeric():
+            divi=float(dni)%23
+            if divi > 22:
+                print("El valor del DNI es incorrecto.")
+                tries.append(2)
+                dnino.append(dni)
+            else:
+                dni=dni+"-"+letras[int(divi)]
+                dnisi.append(dni)
+                print(dni) 
+                tries.append(3)
     sino=input("Deseas introducir otro DNI (s/n): ")
     #Mientras la respuesta no sea SsNn o alfanumérico no acabará el bucle que pregunta
     while sino not in "Ss" and sino not in "Nn" or sino.isalnum() == False:
@@ -78,7 +79,7 @@ while final != 1:
     if nosi == 5:
         print("El número de intentos es: ",len(tries))
         print("El % de DNI correctos son: ",round(tries.count(3)/len(tries)*100,1))
-        print("El % de DNI incorrectos son: ",round(tries.count(0,1,2)/len(tries)*100,1))
+        print("El % de DNI incorrectos son: ",round((tries.count(0)+tries.count(1)+tries.count(2))/len(tries)*100,1))
         print("El % de DNI con error de longitud es: ",round(tries.count(0)/len(tries)*100,1))
         print("El % de DNI con error de dígitos es: ",round(tries.count(1)/len(tries)*100,1))
         print("El % de DNI que no existen es: ",round(tries.count(2)/len(tries)*100,1))
