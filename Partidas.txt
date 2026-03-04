@@ -123,3 +123,68 @@ Hora de la partida: 09:36
 Palabra secreta: espejado
 Número de aciertos: 7
 Número de errores: 6
+Fecha de la partida: 04/03/2026
+Hora de la partida: 21:07
+Palabra secreta: Benidorm
+Número de aciertos: 3
+Número de errores: 2
+Fecha de la partida: 04/03/2026
+Hora de la partida: 21:09
+Palabra secreta: obtuso
+Número de aciertos: 0
+Número de errores: 0
+Fecha de la partida: 04/03/2026
+Hora de la partida: 21:10
+Palabra secreta: itinerario
+Número de aciertos: 3
+Número de errores: 0
+Fecha de la partida: 04/03/2026
+Hora de la partida: 21:12
+Palabra secreta: competitivo
+Número de aciertos: 3
+Número de errores: 1
+Fecha de la partida: 04/03/2026
+Hora de la partida: 21:17
+Palabra secreta: Benidorm
+Número de aciertos: 8
+Número de errores: 1
+Fecha de la partida: 04/03/2026
+Hora de la partida: 21:24
+Palabra secreta: almendra
+Número de aciertos: 1
+Número de errores: 0
+Fecha de la partida: 04/03/2026
+Hora de la partida: 21:24
+Palabra secreta: zanguango
+Número de aciertos: 1
+Número de errores: 2
+Fecha de la partida: 04/03/2026
+Hora de la partida: 21:37
+Palabra secreta: itinerario
+Número de aciertos: 3
+Número de errores: 0
+Fecha de la partida: 04/03/2026
+Hora de la partida: 21:38
+Palabra secreta: miranda
+Número de aciertos: 1
+Número de errores: 0
+Fecha de la partida: 04/03/2026
+Hora de la partida: 21:38
+Palabra secreta: palabra
+Número de aciertos: 0
+Número de errores: 0
+Fecha de la partida: 04/03/2026
+Hora de la partida: 21:41
+Palabra secreta: almendra
+Número de aciertos: 7
+Número de errores: 0
+Fecha de la partida: 04/03/2026
+Hora de la partida: 22:12
+Palabra secreta: competitivo
+Número de aciertos: 1
+Número de errores: 1
+Fecha de la partida: 04/03/2026
+Hora de la partida: 22:13
+Palabra secreta: matadora
+Número de aciertos: 6
+Número de errores: 0

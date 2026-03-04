@@ -14,15 +14,19 @@ por4=0
 por5=0
 dicc="No"
 dicsino="N"
+dicactivado=0
 while sino in "Ss":
+    mult=float(1)
     if dicc == "Sí":
         dicsino=input("¿Deseas activar el modo diccionario? (s/n): ")
         while dicsino not in "Ss" and dicsino not in "Nn" or dicsino.isalpha() == False:
             print("Respuesta incorrecta.")
             dicsino=input("¿Deseas activar el modo diccionario? (s/n): ")
     if dicsino in "Ss":
-        dic=open("Diccionario.txt", "r", encoding="utf-8")
-        dic=dic.read().splitlines()
+        if float(dicactivado) == 0:
+            dic=open("Diccionario.txt", "r", encoding="utf-8")
+            dic=dic.read().splitlines()
+            dicactivado=1
         tiempo1=time.perf_counter()
         Lista_aciertos=[]
         Lista_errores=[]
@@ -51,41 +55,37 @@ while sino in "Ss":
         print("[ "+ " , ".join(Lista_partida)+ " ]")
         error=-1
     if por2 != 0 or por3 != 0 or por4 != 0 or por5 != 0:
-        mult=input("¿Deseas usar algún multiplicador? (2/3/4/5/0): ")
-        while mult not in "23450" or mult.isnumeric() == False:
-            print("Respuesta incorrecta.")
+        while mult != 0 and mult != 2 and mult != 3 and mult != 4 and mult != 5:
             mult=input("¿Deseas usar algún multiplicador? (2/3/4/5/0): ")
-        if float(mult) != 0:
+            while mult not in "23450" or mult.isnumeric() == False:
+                print("Respuesta incorrecta.")
+                mult=input("¿Deseas usar algún multiplicador? (2/3/4/5/0): ")
             mult=float(mult)
             if mult == 2:
                 if por2 == 0:
                     print("No tienes multiplicadores de este tipo.")
-                    mult=input("¿Deseas usar algún multiplicador? (2/3/4/5/0): ")
                 else:
                     mult=2
                     por2-=1
             elif mult == 3:
                 if por3 == 0:
                     print("No tienes multiplicadores de este tipo.")
-                    mult=input("¿Deseas usar algún multiplicador? (2/3/4/5/0): ")
                 else:
                     mult=3
                     por3-=1
             elif mult == 4:
                 if por4 == 0:
                     print("No tienes multiplicadores de este tipo.")
-                    mult=input("¿Deseas usar algún multiplicador? (2/3/4/5/0): ")
                 else:
                     mult=4
                     por4-=1
             elif mult == 5:
                 if por5 == 0:
                     print("No tienes multiplicadores de este tipo.")
-                    mult=input("¿Deseas usar algún multiplicador? (2/3/4/5/0): ")
                 else:
                     mult=5
                     por5-=1
-        else:
+        if mult == 0:
             print("Recibido, sin multiplicadores.")
             mult=1
     else:
@@ -93,29 +93,40 @@ while sino in "Ss":
     while Lista_ahorcado != ["A","H","O","R","C","A","D","O"] and Lista_partida != secret:
         pos=-1
         if com1 != 0 or com2 != 0:
-            como=input("¿Deseas usar un comodín? (1/2/0): ")
-            while como not in "120" or como.isnumeric() == False:
-                print("Respuesta incorrecta.")
+            comusado=float(0)
+            como=float(-1)
+            while comusado == 0 and como != 0:
                 como=input("¿Deseas usar un comodín? (1/2/0): ")
-            if como == 1:
-                if com1 == 0:
-                    print("No tienes comodines de este tipo.")
-                    mult=input("¿Deseas usar algún multiplicador? (2/3/4/5/0): ")
-                else:
-                    com1-=1
-            elif como == 2:
-                if com2 == 0:
-                    print("No tienes comodines de este tipo.")
-                    mult=input("¿Deseas usar algún multiplicador? (2/3/4/5/0): ")
-                else:
-                    com2-=1
-                    for xy in range(list(sinti)):
+                while como not in "120" or como.isnumeric() == False:
+                    print("Respuesta incorrecta.")
+                    como=input("¿Deseas usar un comodín? (1/2/0): ")
+                como=float(como)
+                if como == 1:
+                    if com1 == 0:
+                        print("No tienes comodines de este tipo.")
+                    else:
+                        com1-=1
+                        comusado+=1
+                        pos=random.randint(0,len(secret))
+                        Lista_partida.pop(pos)
+                        Lista_partida.insert(pos,secret[pos])
                         pos=-1
-                        for xyz in range(secret)
-                            pos=pos+1
-                            if xy === xyz:
-                                Lista_partida.pop(pos)
-                                Lista_partida.insert(pos,secret[pos])
+                        print("[ "+ " , ".join(Lista_partida)+ " ]")
+                elif como == 2:
+                    if com2 == 0:
+                        print("No tienes comodines de este tipo.")
+                    else:
+                        com2-=1
+                        comusado+=1
+                        for xy in list(sinti):
+                            pos=-1
+                            for xyz in secret:
+                                pos=pos+1
+                                if xy == xyz:
+                                    Lista_partida.pop(pos)
+                                    Lista_partida.insert(pos,secret[pos])
+                        print("[ "+ " , ".join(Lista_partida)+ " ]")
+            pos=-1
         letra=str(input("Introduce una letra: "))
         while letra.lower() in Lista_errores or letra.upper() in Lista_errores or letra.lower() in Lista_aciertos or letra.upper() in Lista_aciertos:
             print("Esa letra ya la usaste.")
@@ -196,6 +207,7 @@ while sino in "Ss":
             nuevo=input("Introduce la palabra: ")
         if dicc == "Sí":
             dic.append(nuevo)
+            Lista_palabrasecreta.append(nuevo)
         else:
             Lista_palabrasecreta.append(nuevo)
     nisinino=input("¿Deseas abrir la tienda? (s/n): ")
@@ -206,8 +218,8 @@ while sino in "Ss":
         compras="s"
         while compras in "Ss":
             print("Bienvenido a la tienda")
-            print("1. Comodín letra aleatoria - 2 puntos")
-            print("2. Comodín revelar vocales - 5 puntos")
+            print("1. Comodín letra aleatoria - 5 puntos")
+            print("2. Comodín revelar vocales - 10 puntos")
             print("3. Multiplicador de puntos x2 - 10 puntos")
             print("4. Multiplicador de puntos x3 - 20 puntos")
             print("5. Multiplicador de puntos x4 - 30 puntos")
@@ -221,16 +233,16 @@ while sino in "Ss":
             if float(eleccion)==0:
                 print("Cerrando tienda.")
             elif float(eleccion)==1:
-                if puntos >= 2:
+                if puntos >= 5:
                     com1+=1
-                    puntos-=2
+                    puntos-=5
                     print("Has adquirido el comodín aleatorio.")
                 else:
                     print("No tienes puntos suficientes.")
             elif float(eleccion)==2:
-                if puntos >= 5:
+                if puntos >= 10:
                     com2+=1
-                    puntos-=5
+                    puntos-=10
                     print("Has adquirido el comodín de vocales.")
                 else:
                     print("No tienes puntos suficientes.")
