@@ -27,6 +27,7 @@
 #print(hora)
 #with open("ejemplo.txt", "a", encoding="utf-8") as f:
 #    f.write("Nueva línea\n")
-puntos=0
-puntos-=1
-print(puntos)
+a=2
+b=30
+c=a*3600+b*60
+print(c)

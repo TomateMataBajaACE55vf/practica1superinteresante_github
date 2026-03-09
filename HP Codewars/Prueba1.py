@@ -1,0 +1,1 @@
+print("The Echo Chamber says: Welcome to HP CodeWars Barcelona!")
