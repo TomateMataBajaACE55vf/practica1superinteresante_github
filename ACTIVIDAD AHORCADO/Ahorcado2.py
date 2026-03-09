@@ -17,6 +17,7 @@ dicsino="N"
 dicactivado=0
 while sino in "Ss":
     mult=float(1)
+    vocaluso=float(0)
     if dicc == "Sí":
         dicsino=input("¿Deseas activar el modo diccionario? (s/n): ")
         while dicsino not in "Ss" and dicsino not in "Nn" or dicsino.isalpha() == False:
@@ -95,7 +96,8 @@ while sino in "Ss":
         if com1 != 0 or com2 != 0:
             comusado=float(0)
             como=float(-1)
-            while comusado == 0 and como != 0:
+            while comusado == 0 and como != 0 and Lista_ahorcado[6] == "D" or comusado == 0 and vocaluso != 1:
+                pos=-1
                 como=input("¿Deseas usar un comodín? (1/2/0): ")
                 while como not in "120" or como.isnumeric() == False:
                     print("Respuesta incorrecta.")
@@ -106,18 +108,23 @@ while sino in "Ss":
                         print("No tienes comodines de este tipo.")
                     else:
                         com1-=1
-                        comusado+=1
-                        pos=random.randint(0,len(secret))
-                        Lista_partida.pop(pos)
-                        Lista_partida.insert(pos,secret[pos])
-                        pos=-1
+                        while comusado != 1:
+                            pos=random.randint(0,len(secret))-1
+                            if Lista_partida[pos] == "_":
+                                Lista_partida.pop(pos)
+                                Lista_partida.insert(pos,secret[pos])
+                                Lista_aciertos.append(secret[pos])
+                                comusado+=1
+                            pos=-1
                         print("[ "+ " , ".join(Lista_partida)+ " ]")
                 elif como == 2:
                     if com2 == 0:
                         print("No tienes comodines de este tipo.")
+                    elif vocaluso != 0:
+                        print("Ya se ha usado el comodín.")
                     else:
                         com2-=1
-                        comusado+=1
+                        vocaluso+=1
                         for xy in list(sinti):
                             pos=-1
                             for xyz in secret:
@@ -125,6 +132,15 @@ while sino in "Ss":
                                 if xy == xyz:
                                     Lista_partida.pop(pos)
                                     Lista_partida.insert(pos,secret[pos])
+                                    Lista_aciertos.append(secret[pos])
+                        for a in list(tilde):
+                            pos=-1
+                            for b in secret:
+                                pos=pos+1
+                                if a == b:
+                                    Lista_partida.pop(pos)
+                                    Lista_partida.insert(pos,secret[pos])
+                                    Lista_aciertos.append(secret[pos])
                         print("[ "+ " , ".join(Lista_partida)+ " ]")
             pos=-1
         letra=str(input("Introduce una letra: "))
@@ -217,9 +233,9 @@ while sino in "Ss":
     if nisinino in "Ss":
         compras="s"
         while compras in "Ss":
-            print("Bienvenido a la tienda")
-            print("1. Comodín letra aleatoria - 5 puntos")
-            print("2. Comodín revelar vocales - 10 puntos")
+            print("Bienvenido a la tienda (1 punto por letra, 10 por palabra)")
+            print("1. Comodín letra aleatoria - 5 puntos (aparecerán cuando estés al borde de perder)")
+            print("2. Comodín revelar vocales - 10 puntos (están disponibles siempre)")
             print("3. Multiplicador de puntos x2 - 10 puntos")
             print("4. Multiplicador de puntos x3 - 20 puntos")
             print("5. Multiplicador de puntos x4 - 30 puntos")
