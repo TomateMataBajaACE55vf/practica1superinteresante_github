@@ -1,7 +1,7 @@
 import random
 import time
 from datetime import date, datetime
-Lista_palabrasecreta=["palabra","zanguango","competitivo","obtuso","itinerario","longaniza","almendra","matadora","Benidorm","miranda","polítoton","polimerasa","argón","enriquecer","oposición","llanura","Vetusta","Ununennio","apoteósico","efervescente","ultratumba"]
+Lista_palabrasecreta=["palabra","zanguango","competitivo","obtuso","itinerario","longaniza","almendra","matadora","Benidorm","miranda","polítoton","polimerasa","argón","enriquecer","oposición","llanura","Vetusta","ununennio","apoteósico","efervescente","ultratumba"]
 sino="s"
 tilde="áéíóú"
 sinti="aeiou"
@@ -93,50 +93,6 @@ while sino in "Ss":
         mult=1
     while Lista_ahorcado != ["A","H","O","R","C","A","D","O"] and Lista_partida != secret:
         pos=-1
-        letra=str(input("Introduce una letra: "))
-        while letra.lower() in Lista_errores or letra.upper() in Lista_errores or letra.lower() in Lista_aciertos or letra.upper() in Lista_aciertos:
-            print("Esa letra ya la usaste.")
-            letra=str(input("Introduce una letra: "))
-        while len(letra) != 1 and list(letra) != secret or letra.isalpha() == False:
-            print("Lo que has introducido es incorrecto.")
-            letra=str(input("Introduce una letra: "))
-        if list(letra) == secret:
-            Lista_partida=secret
-            print("[ "+ " , ".join(Lista_partida)+ " ]")
-        else:
-            if letra.lower() in tilde or letra.upper() in tilde:
-                for z in tilde:
-                    pos=pos+1
-                    if z == letra:
-                        Lista_partida.pop(pos)
-                        Lista_partida.insert(pos,sinti[pos])
-                    elif z == letra.lower():
-                        Lista_partida.pop(pos)
-                        Lista_partida.insert(pos,sinti[pos])
-                    elif z == letra.upper():
-                        Lista_partida.pop(pos)
-                        Lista_partida.insert(pos,sinti[pos])
-                pos=-1
-            if letra.lower() in secret or letra.upper() in secret:
-                for y in secret:
-                    pos=pos+1
-                    if y == letra:
-                        Lista_partida.pop(pos)
-                        Lista_partida.insert(pos,y)
-                    elif y == letra.lower():
-                        Lista_partida.pop(pos)
-                        Lista_partida.insert(pos,y)
-                    elif y == letra.upper():
-                        Lista_partida.pop(pos)
-                        Lista_partida.insert(pos,y)
-                print("[ "+ " , ".join(Lista_partida)+ " ]")
-                Lista_aciertos.append(letra)
-                puntos+=1*int(mult)
-            else:
-                error=error+1
-                Lista_ahorcado.pop(error)
-                Lista_ahorcado.insert(error,["A","H","O","R","C","A","D","O"][error])
-                print(*Lista_ahorcado)
         if com1 != 0 or com2 != 0:
             comusado=float(0)
             como=float(-1)
@@ -188,6 +144,53 @@ while sino in "Ss":
                                     Lista_aciertos.append(secret[pos])
                         print("[ "+ " , ".join(Lista_partida)+ " ]")
             pos=-1
+        if Lista_partida == secret:
+            break
+        letra=str(input("Introduce una letra: "))
+        while letra.lower() in Lista_errores or letra.upper() in Lista_errores or letra.lower() in Lista_aciertos or letra.upper() in Lista_aciertos:
+            print("Esa letra ya la usaste.")
+            letra=str(input("Introduce una letra: "))
+        while len(letra) != 1 and list(letra) != secret or letra.isalpha() == False:
+            print("Lo que has introducido es incorrecto.")
+            letra=str(input("Introduce una letra: "))
+        if list(letra) == secret:
+            Lista_partida=secret
+            print("[ "+ " , ".join(Lista_partida)+ " ]")
+        else:
+            if letra.lower() in tilde or letra.upper() in tilde:
+                for z in tilde:
+                    pos=pos+1
+                    if z == letra:
+                        Lista_partida.pop(pos)
+                        Lista_partida.insert(pos,sinti[pos])
+                    elif z == letra.lower():
+                        Lista_partida.pop(pos)
+                        Lista_partida.insert(pos,sinti[pos])
+                    elif z == letra.upper():
+                        Lista_partida.pop(pos)
+                        Lista_partida.insert(pos,sinti[pos])
+                pos=-1
+            if letra.lower() in secret or letra.upper() in secret:
+                for y in secret:
+                    pos=pos+1
+                    if y == letra:
+                        Lista_partida.pop(pos)
+                        Lista_partida.insert(pos,y)
+                    elif y == letra.lower():
+                        Lista_partida.pop(pos)
+                        Lista_partida.insert(pos,y)
+                    elif y == letra.upper():
+                        Lista_partida.pop(pos)
+                        Lista_partida.insert(pos,y)
+                print("[ "+ " , ".join(Lista_partida)+ " ]")
+                Lista_aciertos.append(letra)
+                puntos+=1*int(mult)
+            else:
+                error=error+1
+                Lista_ahorcado.pop(error)
+                Lista_ahorcado.insert(error,["A","H","O","R","C","A","D","O"][error])
+                print(*Lista_ahorcado)
+                Lista_errores.append(letra)
     if Lista_partida == secret:
         puntos+=10*int(mult)
     print("La palabra era",palabra)

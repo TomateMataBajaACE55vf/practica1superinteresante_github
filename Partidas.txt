@@ -303,3 +303,38 @@ Hora de la partida: 15:30
 Palabra secreta: cordojoso
 Número de aciertos: 10
 Número de errores: 7
+Fecha de la partida: 13/03/2026
+Hora de la partida: 15:53
+Palabra secreta: miranda
+Número de aciertos: 6
+Número de errores: 0
+Fecha de la partida: 13/03/2026
+Hora de la partida: 15:54
+Palabra secreta: longaniza
+Número de aciertos: 3
+Número de errores: 0
+Fecha de la partida: 13/03/2026
+Hora de la partida: 15:54
+Palabra secreta: llanura
+Número de aciertos: 5
+Número de errores: 0
+Fecha de la partida: 13/03/2026
+Hora de la partida: 15:54
+Palabra secreta: obtuso
+Número de aciertos: 5
+Número de errores: 0
+Fecha de la partida: 13/03/2026
+Hora de la partida: 15:54
+Palabra secreta: Ununennio
+Número de aciertos: 5
+Número de errores: 0
+Fecha de la partida: 13/03/2026
+Hora de la partida: 15:55
+Palabra secreta: almendra
+Número de aciertos: 7
+Número de errores: 0
+Fecha de la partida: 13/03/2026
+Hora de la partida: 15:55
+Palabra secreta: efervescente
+Número de aciertos: 8
+Número de errores: 0
