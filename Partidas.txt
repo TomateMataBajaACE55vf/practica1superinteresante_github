@@ -338,3 +338,23 @@ Hora de la partida: 15:55
 Palabra secreta: efervescente
 Número de aciertos: 8
 Número de errores: 0
+Fecha de la partida: 13/03/2026
+Hora de la partida: 16:00
+Palabra secreta: longaniza
+Número de aciertos: 3
+Número de errores: 2
+Fecha de la partida: 13/03/2026
+Hora de la partida: 16:00
+Palabra secreta: Benidorm
+Número de aciertos: 8
+Número de errores: 2
+Fecha de la partida: 13/03/2026
+Hora de la partida: 16:00
+Palabra secreta: obtuso
+Número de aciertos: 0
+Número de errores: 1
+Fecha de la partida: 13/03/2026
+Hora de la partida: 16:00
+Palabra secreta: matadora
+Número de aciertos: 1
+Número de errores: 1
