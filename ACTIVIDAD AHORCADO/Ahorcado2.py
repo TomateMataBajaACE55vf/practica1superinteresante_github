@@ -1,7 +1,7 @@
 import random
 import time
 from datetime import date, datetime
-Lista_palabrasecreta=["palabra","zanguango","competitivo","obtuso","itinerario","longaniza","almendra","matadora","Benidorm","miranda"]
+Lista_palabrasecreta=["palabra","zanguango","competitivo","obtuso","itinerario","longaniza","almendra","matadora","Benidorm","miranda","polítoton","polimerasa","argón","enriquecer","oposición","llanura","Vetusta","Ununennio","apoteósico","efervescente","ultratumba"]
 sino="s"
 tilde="áéíóú"
 sinti="aeiou"
@@ -93,56 +93,6 @@ while sino in "Ss":
         mult=1
     while Lista_ahorcado != ["A","H","O","R","C","A","D","O"] and Lista_partida != secret:
         pos=-1
-        if com1 != 0 or com2 != 0:
-            comusado=float(0)
-            como=float(-1)
-            while comusado == 0 and como != 0 and Lista_ahorcado[6] == "D" or comusado == 0 and vocaluso != 1:
-                pos=-1
-                como=input("¿Deseas usar un comodín? (1/2/0): ")
-                while como not in "120" or como.isnumeric() == False:
-                    print("Respuesta incorrecta.")
-                    como=input("¿Deseas usar un comodín? (1/2/0): ")
-                como=float(como)
-                if como == 1:
-                    if com1 == 0:
-                        print("No tienes comodines de este tipo.")
-                    else:
-                        com1-=1
-                        while comusado != 1:
-                            pos=random.randint(0,len(secret))-1
-                            if Lista_partida[pos] == "_":
-                                Lista_partida.pop(pos)
-                                Lista_partida.insert(pos,secret[pos])
-                                Lista_aciertos.append(secret[pos])
-                                comusado+=1
-                            pos=-1
-                        print("[ "+ " , ".join(Lista_partida)+ " ]")
-                elif como == 2:
-                    if com2 == 0:
-                        print("No tienes comodines de este tipo.")
-                    elif vocaluso != 0:
-                        print("Ya se ha usado el comodín.")
-                    else:
-                        com2-=1
-                        vocaluso+=1
-                        for xy in list(sinti):
-                            pos=-1
-                            for xyz in secret:
-                                pos=pos+1
-                                if xy == xyz:
-                                    Lista_partida.pop(pos)
-                                    Lista_partida.insert(pos,secret[pos])
-                                    Lista_aciertos.append(secret[pos])
-                        for a in list(tilde):
-                            pos=-1
-                            for b in secret:
-                                pos=pos+1
-                                if a == b:
-                                    Lista_partida.pop(pos)
-                                    Lista_partida.insert(pos,secret[pos])
-                                    Lista_aciertos.append(secret[pos])
-                        print("[ "+ " , ".join(Lista_partida)+ " ]")
-            pos=-1
         letra=str(input("Introduce una letra: "))
         while letra.lower() in Lista_errores or letra.upper() in Lista_errores or letra.lower() in Lista_aciertos or letra.upper() in Lista_aciertos:
             print("Esa letra ya la usaste.")
@@ -187,7 +137,57 @@ while sino in "Ss":
                 Lista_ahorcado.pop(error)
                 Lista_ahorcado.insert(error,["A","H","O","R","C","A","D","O"][error])
                 print(*Lista_ahorcado)
-                Lista_errores.append(letra)
+        if com1 != 0 or com2 != 0:
+            comusado=float(0)
+            como=float(-1)
+            while comusado == 0 and como != 0 and Lista_ahorcado[6] == "D" or comusado == 0 and vocaluso != 1 and com2 != 0:
+                pos=-1
+                como=input("¿Deseas usar un comodín? (1/2/0): ")
+                while como not in "120" or como.isnumeric() == False:
+                    print("Respuesta incorrecta.")
+                    como=input("¿Deseas usar un comodín? (1/2/0): ")
+                como=float(como)
+                if como == 1:
+                    if com1 == 0:
+                        print("No tienes comodines de este tipo.")
+                    else:
+                        com1-=1
+                        while comusado != 1:
+                            pos=random.randint(0,len(secret))-1
+                            if Lista_partida[pos] == "_":
+                                Lista_partida.pop(pos)
+                                Lista_partida.insert(pos,secret[pos])
+                                if secret.count(secret[pos]) == Lista_partida.count(secret[pos]):
+                                    Lista_aciertos.append(secret[pos])
+                                comusado+=1
+                            pos=-1
+                        print("[ "+ " , ".join(Lista_partida)+ " ]")
+                elif como == 2:
+                    if com2 == 0:
+                        print("No tienes comodines de este tipo.")
+                    elif vocaluso != 0:
+                        print("Ya se ha usado el comodín.")
+                    else:
+                        com2-=1
+                        vocaluso+=1
+                        for xy in list(sinti):
+                            pos=-1
+                            for xyz in secret:
+                                pos=pos+1
+                                if xy == xyz:
+                                    Lista_partida.pop(pos)
+                                    Lista_partida.insert(pos,secret[pos])
+                                    Lista_aciertos.append(secret[pos])
+                        for a in list(tilde):
+                            pos=-1
+                            for b in secret:
+                                pos=pos+1
+                                if a == b:
+                                    Lista_partida.pop(pos)
+                                    Lista_partida.insert(pos,secret[pos])
+                                    Lista_aciertos.append(secret[pos])
+                        print("[ "+ " , ".join(Lista_partida)+ " ]")
+            pos=-1
     if Lista_partida == secret:
         puntos+=10*int(mult)
     print("La palabra era",palabra)

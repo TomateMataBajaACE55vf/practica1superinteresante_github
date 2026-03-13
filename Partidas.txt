@@ -268,3 +268,38 @@ Hora de la partida: 15:52
 Palabra secreta: remodelación
 Número de aciertos: 12
 Número de errores: 7
+Fecha de la partida: 13/03/2026
+Hora de la partida: 15:13
+Palabra secreta: miranda
+Número de aciertos: 6
+Número de errores: 0
+Fecha de la partida: 13/03/2026
+Hora de la partida: 15:16
+Palabra secreta: Benidorm
+Número de aciertos: 8
+Número de errores: 2
+Fecha de la partida: 13/03/2026
+Hora de la partida: 15:25
+Palabra secreta: longaniza
+Número de aciertos: 7
+Número de errores: 0
+Fecha de la partida: 13/03/2026
+Hora de la partida: 15:27
+Palabra secreta: almendra
+Número de aciertos: 7
+Número de errores: 0
+Fecha de la partida: 13/03/2026
+Hora de la partida: 15:28
+Palabra secreta: palabra
+Número de aciertos: 5
+Número de errores: 0
+Fecha de la partida: 13/03/2026
+Hora de la partida: 15:29
+Palabra secreta: miranda
+Número de aciertos: 6
+Número de errores: 2
+Fecha de la partida: 13/03/2026
+Hora de la partida: 15:30
+Palabra secreta: cordojoso
+Número de aciertos: 10
+Número de errores: 7
