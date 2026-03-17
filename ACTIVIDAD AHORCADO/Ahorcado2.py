@@ -157,22 +157,11 @@ while sino in "Ss":
             Lista_partida=secret
             print("[ "+ " , ".join(Lista_partida)+ " ]")
         else:
-            if letra.lower() in tilde or letra.upper() in tilde:
-                for z in tilde:
-                    pos=pos+1
-                    if z == letra:
-                        Lista_partida.pop(pos)
-                        Lista_partida.insert(pos,sinti[pos])
-                    elif z == letra.lower():
-                        Lista_partida.pop(pos)
-                        Lista_partida.insert(pos,sinti[pos])
-                    elif z == letra.upper():
-                        Lista_partida.pop(pos)
-                        Lista_partida.insert(pos,sinti[pos])
-                pos=-1
             if letra.lower() in secret or letra.upper() in secret:
                 for y in secret:
                     pos=pos+1
+                    if letra.lower() in tilde or letra.upper() in tilde:
+                        letra=sinti[tilde.find(letra)]
                     if y == letra:
                         Lista_partida.pop(pos)
                         Lista_partida.insert(pos,y)
@@ -182,6 +171,18 @@ while sino in "Ss":
                     elif y == letra.upper():
                         Lista_partida.pop(pos)
                         Lista_partida.insert(pos,y)
+                    if letra in sinti:
+                        letra2=tilde[sinti.find(letra)]
+                        if y == letra2:
+                            Lista_partida.pop(pos)
+                            Lista_partida.insert(pos,y)
+                        elif y == letra2.lower():
+                            Lista_partida.pop(pos)
+                            Lista_partida.insert(pos,y)
+                        elif y == letra2.upper():
+                            Lista_partida.pop(pos)
+                            Lista_partida.insert(pos,y)
+                        Lista_aciertos.append(letra2)
                 print("[ "+ " , ".join(Lista_partida)+ " ]")
                 Lista_aciertos.append(letra)
                 puntos+=1*int(mult)

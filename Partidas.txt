@@ -358,3 +358,53 @@ Hora de la partida: 16:00
 Palabra secreta: matadora
 Número de aciertos: 1
 Número de errores: 1
+Fecha de la partida: 17/03/2026
+Hora de la partida: 10:06
+Palabra secreta: ununennio
+Número de aciertos: 6
+Número de errores: 1
+Fecha de la partida: 17/03/2026
+Hora de la partida: 10:11
+Palabra secreta: íiiiií
+Número de aciertos: 2
+Número de errores: 0
+Fecha de la partida: 17/03/2026
+Hora de la partida: 10:13
+Palabra secreta: íiiiií
+Número de aciertos: 2
+Número de errores: 0
+Fecha de la partida: 17/03/2026
+Hora de la partida: 10:21
+Palabra secreta: íiiiií
+Número de aciertos: 2
+Número de errores: 0
+Fecha de la partida: 17/03/2026
+Hora de la partida: 10:21
+Palabra secreta: íiiiií
+Número de aciertos: 2
+Número de errores: 0
+Fecha de la partida: 17/03/2026
+Hora de la partida: 10:24
+Palabra secreta: íiiiií
+Número de aciertos: 1
+Número de errores: 0
+Fecha de la partida: 17/03/2026
+Hora de la partida: 10:25
+Palabra secreta: iííii
+Número de aciertos: 2
+Número de errores: 0
+Fecha de la partida: 17/03/2026
+Hora de la partida: 10:31
+Palabra secreta: íiiiií
+Número de aciertos: 1
+Número de errores: 0
+Fecha de la partida: 17/03/2026
+Hora de la partida: 10:31
+Palabra secreta: íiiiií
+Número de aciertos: 1
+Número de errores: 0
+Fecha de la partida: 17/03/2026
+Hora de la partida: 10:33
+Palabra secreta: Vetusta
+Número de aciertos: 6
+Número de errores: 4
