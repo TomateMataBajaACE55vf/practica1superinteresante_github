@@ -98,10 +98,10 @@ while sino in "Ss":
             como=float(-1)
             while comusado == 0 and como != 0 and Lista_ahorcado[6] == "D" or comusado == 0 and vocaluso != 1 and com2 != 0:
                 pos=-1
-                como=input("¿Deseas usar un comodín? (1/2/0): ")
+                como=input("¿Deseas usar un comodín, teniendo en cuenta que no dan puntos? (1/2/0): ")
                 while como not in "120" or como.isnumeric() == False:
                     print("Respuesta incorrecta.")
-                    como=input("¿Deseas usar un comodín? (1/2/0): ")
+                    como=input("¿Deseas usar un comodín, teniendo en cuenta que no dan puntos? (1/2/0): ")
                 como=float(como)
                 if como == 1:
                     if com1 == 0:

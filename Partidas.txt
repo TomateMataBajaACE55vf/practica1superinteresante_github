@@ -408,3 +408,8 @@ Hora de la partida: 10:33
 Palabra secreta: Vetusta
 Número de aciertos: 6
 Número de errores: 4
+Fecha de la partida: 17/03/2026
+Hora de la partida: 10:42
+Palabra secreta: Vetusta
+Número de aciertos: 14
+Número de errores: 7
